@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Shop</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        /* Header with wave effect */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            background: url('https://i.imgur.com/2hLzN3H.png') no-repeat center;
+            background-size: cover;
+        }
+        
+        .header-title {
+            color: #ff0000;
+            font-weight: bold;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            text-decoration: underline;
+            text-decoration-color: #ff0000;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .notice-box {
+            background-color: #ffe6e6;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .container {
+            padding: 20px;
+            background: white;
+            box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .free-delivery {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .free-delivery span {
+            color: red;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .free-delivery {
+                font-size: 20px;
+            }
+        }
+        
+        .regular-price {
+            font-size: 22px;
+            color: blue;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .strike {
+            text-decoration: line-through;
+            color: red;
+        }
+        
+        .offer-price {
+            font-size: 22px;
+            color: green;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        /* Circle style */
+        .circle {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 2px solid red;
+            border-radius: 50%;
+            font-weight: bold;
+            position: relative;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        /* Circle animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.3);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        .order-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .order-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .contact-text {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-text {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .phone-number {
+            background-color: #008000;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.3rem;
+            display: inline-block;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .phone-number:hover {
+            background-color: #006600;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .phone-number {
+                font-size: 1.1rem;
+                padding: 8px 15px;
+            }
+        }
+        
+        .slider-section {
+            background-color: #fff;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .carousel-item img {
+            max-height: 400px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-item img {
+                max-height: 250px;
+            }
+        }
+        
+        .features-title {
+            background-color: #ff0000;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .features-title {
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+        }
+        
+        .feature-card {
+            border: 3px solid #ff0000;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+            display: block;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-card img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        .feature-card h3 {
+            color: #ff0000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .yellow-bg {
+            background-color: #ffff00;
+            background-image: radial-gradient(#ffff00, #ffd700);
+        }
+        
+        .pagination {
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .pagination .page-item.active .page-link {
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+        
+        .pagination .page-link {
+            color: #ff0000;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Wave -->
+    <div class="header"></div>
+    
+    <!-- Return Policy Title -->
+    <div class="container">
+        <h1 class="header-title">রিটার্ন পলিসি</h1>
+    </div>
+    
+    <!-- Notice Box -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="notice-box">
+                <p class="mb-0">পণ্যের মিল থাকা সত্ত্বেও রিটার্ন করতে চাইলে ডেলিভারি চার্জ দিয়ে রিটার্ন করতে হবে। কোনো ডিফেক্ট থাকলে ফ্রি রিটার্ন।</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Free Delivery Section -->
+    <div class="container">
+        <div class="free-delivery">
+            সীমিত সময়ের জন্য রয়েছে <span>ফ্রি ডেলিভারি!!</span>
+        </div>
+
+        <div class="regular-price">
+            রেগুলার প্রাইস: <span class="strike">১৩৫০</span> টাকা।
+        </div>
+
+        <div class="offer-price">
+            অফার প্রাইস <span class="circle">১০২৫</span> টাকা।
+        </div>
+        
+        <button class="order-btn">অর্ডার করতে ক্লিক করুন <i class="fas fa-arrow-right"></i></button>
+        
+        <p class="contact-text">প্রয়োজনে কল করুন</p>
+        <div class="text-center">
+            <a href="tel:01912294275" class="phone-number">
+                <i class="fas fa-phone-alt"></i> 01912-294275
+            </a>
+        </div>
+    </div>
+    
+    <!-- Product Slider Section -->
+    <section class="slider-section">
+        <div class="container">
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner yellow-bg">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-center">
+                                    <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-04-2-scaled.jpg" class="img-fluid" alt="Wallet 1">
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-02-1-scaled.jpg" class="img-fluid" alt="Wallet 2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-04-2-scaled.jpg" class="img-fluid" alt="Wallet 3">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-02-1-scaled.jpg" class="img-fluid" alt="Wallet 4">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <div class="pagination mt-3">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="features-title">ওয়ালেট এর বৈশিষ্ট্য</h2>
+            
+            <div class="row">
+                <!-- Feature Card 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-04-2-scaled.jpg" alt="চামড়ার তৈরি" class="img-fluid">
+                        </div>
+                        <h3>চামড়ার তৈরি</h3>
+                        <p>গরুর চামড়ার তৈরি, সফট ও কমফোর্টেবল টেক্সচার হবে জীবনের।</p>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-02-1-scaled.jpg" alt="নিখুঁত ফিনিশিং" class="img-fluid">
+                        </div>
+                        <h3>নিখুঁত ফিনিশিং</h3>
+                        <p>টপ গ্রেইন লেদার, স্লুথ সারফেস ও নিখুঁত ফিনিশিং।</p>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-04-2-scaled.jpg" alt="একই চামড়ার তৈরি" class="img-fluid">
+                        </div>
+                        <h3>একই চামড়ার তৈরি</h3>
+                        <p>সম্পূর্ণ ওয়ালেট একই চামড়ার তৈরি, সাধারণ ওয়ালেট থেকে অনেক বেশি প্রিমিয়াম।</p>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 4 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-02-1-scaled.jpg" alt="আরো বেশি স্মার্ট" class="img-fluid">
+                        </div>
+                        <h3>আরো বেশি স্মার্ট</h3>
+                        <p>জামাকে আরো বেশি স্মার্ট এবং আকর্ষণীয় করে তুলবে।</p>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 5 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-04-2-scaled.jpg" alt="ছোলে নেয়ে উত্তমই ব্যবহার" class="img-fluid">
+                        </div>
+                        <h3>ছোলে নেয়ে উত্তমই ব্যবহার</h3>
+                        <p>ছেলে মেয়ে উভয়ই ব্যবহার করা যাবে। গারমেন্ট সাইজ: দৈর্ঘ্য: 4.8 Inch, প্রস্থ: 3.7 Inch.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature Card 6 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="feature-card">
+                        <div class="yellow-bg p-3 rounded-3 mb-3">
+                            <img src="https://shanmart.com.bd/wp-content/uploads/2024/01/wallate-02-1-scaled.jpg" alt="১১ টি স্লট" class="img-fluid">
+                        </div>
+                        <h3>১১ টি স্লট</h3>
+                        <p>ব্যাংক ও বিজনেস কার্ড রাখার ১১ টি স্লট। জরুরি কাগজপত্র ও টাকা রাখার ৫টি আলাদা পকেট।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="divider"></div>
+    
+    <!-- Bootstrap & JavaScript CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            var myCarousel = new bootstrap.Carousel(document.getElementById('productCarousel'), {
+                interval: 3000,
+                wrap: true
+            });
+            
+            // Order button click event
+            document.querySelector('.order-btn').addEventListener('click', function() {
+                alert('আপনার অর্ডার প্রক্রিয়া শুরু হয়েছে!');
+            });
+        });
+    </script>
+</body>
+</html>
