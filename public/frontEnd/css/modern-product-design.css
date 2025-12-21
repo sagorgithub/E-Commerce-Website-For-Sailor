@@ -1,0 +1,502 @@
+/* Modern Product Design CSS for Laravel Project */
+
+/* CSS Variables */
+:root {
+
+            /* --- Combined & Converted Color Palette --- */
+            /* Main Palette based on your Logo */
+            --primary-color: #E52E8A;
+            --secondary-color: #C0A062; /* Soft Gold */
+            --accent-color: #8A2E5A;    /* Deep Plum */
+            
+            /* Text & Price Palette */
+            --text-color: #2D3748;      /* Main Text (Charcoal Gray) */
+            --text-dark: #2D3748;       /* Alias for --text-color */
+            --text-light: #6B7280;      /* Lighter Gray */
+            --price-color: #8A2E5A;     /* Using accent color for prices */
+
+            /* Backgrounds & Borders */
+            --bg-light: #F9FAFB;        /* Off-white */
+            --white: #ffffff;
+            --border-color: #e2e8f0;    /* Light border color */
+            
+            /* Shadows from old code */
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --hover-shadow: rgba(0, 0, 0, 0.15);
+
+            /* Gradients from old code, converted */
+            --gradient-primary: linear-gradient(135deg, #E52E8A 0%, #8A2E5A 100%);
+            --gradient-secondary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+            /* --- Bootstrap Variable Overrides --- */
+            --bs-primary-rgb: 229, 46, 138;
+            --bs-body-font-family: 'Roboto', sans-serif;
+            --bs-body-color: var(--text-dark);
+}
+
+/* Modern Product Section Styles */
+.modern-product-section {
+    background: var(--gradient-secondary);
+    padding: 80px 0;
+}
+
+.modern-section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    position: relative;
+}
+
+.modern-section-title h3 {
+    font-size: 2.8em;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+.modern-section-title h3::before,
+.modern-section-title h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    transform: translateY(-50%);
+}
+
+.modern-section-title h3::before {
+    left: -80px;
+}
+
+.modern-section-title h3::after {
+    right: -80px;
+}
+
+/* Modern Product Grid */
+.modern-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Modern Product Card */
+.modern-product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.modern-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px var(--hover-shadow);
+}
+
+/* Modern Product Image */
+.modern-product-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: #f8f9fa;
+}
+
+.modern-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-product-card:hover .modern-product-image img {
+    transform: scale(1.08);
+}
+
+/* Modern Hover Image */
+.modern-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modern-product-card:hover .modern-hover-image {
+    opacity: 1;
+}
+
+/* Modern Wishlist Button */
+.modern-wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #666;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.modern-product-card:hover .modern-wishlist-btn {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.modern-wishlist-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.15);
+}
+
+/* Modern Quick View */
+.modern-quick-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-product-card:hover .modern-quick-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modern Product Info */
+.modern-product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.modern-product-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.modern-product-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.modern-product-title a:hover {
+    color: var(--secondary-color);
+}
+
+/* Modern Price */
+.modern-price {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modern-price del {
+    color: var(--text-light);
+    font-size: 0.95em;
+    position: relative;
+}
+
+.modern-price del::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--text-light);
+    transform: translateY(-50%);
+}
+
+.modern-price ins {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+/* Modern Add to Cart Button */
+.modern-add-to-cart {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-add-to-cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.modern-add-to-cart:hover::before {
+    left: 100%;
+}
+
+.modern-add-to-cart:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+/* Modern Badge */
+.modern-discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* Modern Out of Stock Badge */
+.modern-out-of-stock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Modern Responsive Design */
+@media (max-width: 1200px) {
+    .modern-product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modern-section-title h3 {
+        font-size: 2.2em;
+    }
+
+    .modern-section-title h3::before,
+    .modern-section-title h3::after {
+        width: 40px;
+        left: -60px;
+        right: -60px;
+    }
+
+    .modern-product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .modern-product-info {
+        padding: 20px;
+    }
+
+    .modern-add-to-cart {
+        padding: 12px 25px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-section-title h3 {
+        font-size: 1.8em;
+    }
+
+    .modern-section-title h3::before,
+    .modern-section-title h3::after {
+        display: none;
+    }
+
+    .modern-product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .modern-product-info {
+        padding: 18px;
+    }
+
+    .modern-product-title {
+        font-size: 1.1em;
+    }
+
+    .modern-price ins {
+        font-size: 1.2em;
+    }
+}
+
+/* Modern Loading Animation */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+.modern-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Modern Focus States */
+.modern-product-card:focus-within {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.modern-add-to-cart:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Modern Button Group */
+.modern-button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.modern-button-group .modern-add-to-cart {
+    flex: 1;
+}
+
+/* Modern Product Actions */
+.modern-product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.modern-product-actions form {
+    flex: 1;
+    margin: 0;
+}
+
+.modern-product-actions .btn {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.modern-product-actions .btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.modern-product-actions .btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.modern-product-actions .btn-outline-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.modern-product-actions .btn-outline-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.modern-product-actions .btn-secondary {
+    background: #6c757d;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* Modern Image Tools */
+.modern-image-tools {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.modern-wishlist-button {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.modern-wishlist-button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
