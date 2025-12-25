@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Header</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+    </section>
+  <header id="top_fixe">
+    My Header
+  </header>
+
+  <div class="content">
+    <p>Scroll করুন নিচে...</p>
+    <p style="height:2000px"></p>
+  </div>
+
+  <script src="script.js"></script>
+
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#top_fixe {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Fixed class */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* content jump ঠেকাতে */
+/* .content {
+  padding-top: 80px;
+}
+#top_fixe {
+  position: sticky;
+  top: 0;
+} */
+
+  </style>
+
+  <script>
+    
+  </script>
+</body>
+</html>

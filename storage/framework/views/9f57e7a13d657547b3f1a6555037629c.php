@@ -1,0 +1,611 @@
+
+
+<?php $__env->startSection('title', 'Sailor | Sailing Life'); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+
+    <main>
+        <section class="main-section">
+            <div class="main-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a target="_self" href="#">
+                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a target="_self" href="#">
+                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a target="_self" href="#">
+                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="ad-banner mb-0">
+            <div class="container-fluid px-0">
+                <div class="row g-0">
+                    <div class="col-md-6 col-12">
+                        <a href="">
+                            <img src="<?php echo e(asset('/frontEnd/images/add.jpg')); ?>" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <a href="">
+                            <img src="<?php echo e(asset('/frontEnd/images/add.jpg')); ?>" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trending-categories-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="common-title">
+                            <h2>Trending categories</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="trending-category">
+                            <div class="trending-slider-wrapper">
+                                <div class="single_category swiper">
+                                    <div class="swiper-wrapper">
+                                        <!-- categories -->
+                                        <?php $__currentLoopData = $menucategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <div class="swiper-slide" role="group" aria-label=""
+                                                style="width: 369.2px; margin-right: 10px;">
+                                                <div class="single-category-main">
+                                                    <div class="single-category">
+                                                        <a href="<?php echo e(url('category/' . $category->slug)); ?>">
+                                                            <img src="<?php echo e(asset($category->image)); ?>" alt="">
+                                                        </a>
+                                                        <div class="category-description">
+                                                            <h3 class="parent-category">
+                                                                <a href="<?php echo e(url('category/' . $category->slug)); ?>"
+                                                                    class="text-truncate"><?php echo e($category->name); ?><svg width="24"
+                                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                                        xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M5 12H19" stroke="black" stroke-width="2"
+                                                                            stroke-linecap="round" stroke-linejoin="round">
+                                                                        </path>
+                                                                        <path d="M12 5L19 12L12 19" stroke="black"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </div>
+
+
+
+
+                                    <div class="swiper-button-prev">
+                                        <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="new-arrval-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="common-title">
+                            <h2>new arrivals</h2>
+                            <a class="text-end nav-link see-all-lg" href="/category/undefined">See All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <?php $__currentLoopData = $frontcategory; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link <?php echo e($key == 0 ? 'active' : ''); ?>" data-bs-toggle="tab"
+                                        data-bs-target="#tab-<?php echo e($category->id); ?>" type="button" role="tab">
+                                        <?php echo e($category->name); ?>
+
+                                    </button>
+                                </li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+
+                            <?php $__currentLoopData = $frontcategory; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="tab-pane fade <?php echo e($key == 0 ? 'show active' : ''); ?>" id="tab-<?php echo e($category->id); ?>"
+                                    role="tabpanel" tabindex="0">
+
+                                    <a class="text-end nav-link see-all-lg d-none"
+                                        href="<?php echo e(route('category', $category->slug)); ?>">
+                                        See All
+                                    </a>
+
+                                    <div class="swiper product-swiper">
+                                        <div class="swiper-wrapper">
+
+                                            <?php $__empty_1 = true; $__currentLoopData = $category->products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                                <div class="swiper-slide" role="group" aria-label=""
+                                                    style="width: 369.2px; margin-right: 10px;">
+                                                    <div class="single-product">
+                                                        <div class="card">
+                                                            <div class="product-image">
+                                                                <a href="<?php echo e(route('product', $product->slug)); ?>">
+                                                                    <img src="<?php echo e(asset($product->image->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>"
+                                                                        alt="" class="img-fluid primary-image">
+                                                                </a>
+                                                                <a class="btn add-towish-btn ">
+                                                                    <i class="fa-regular fa-heart"></i>
+                                                                </a>
+                                                                <div class="product-view-sets">
+                                                                    <ul class="nav">
+                                                                        <li class="nav-item">
+                                                                            <a href="<?php echo e(route('product', $product->slug)); ?>" class="nav-link">
+                                                                                <i class="icofont-cart-alt"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a href="javascript:void(0)" class="nav-link">
+                                                                                <i class="icofont-eye-alt" data-bs-toggle="modal"
+                                                                                    data-bs-target="#productQuickView">
+                                                                                </i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a href="javascript:void(0)" class="nav-link">
+                                                                                <i class="icofont-law-alt-1"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-description">
+                                                                <h4 class="product-name">
+                                                                    <a
+                                                                        href="<?php echo e(route('product', $product->slug)); ?>"><?php echo e($product->name); ?></a>
+                                                                </h4>
+                                                                <p class="price">৳ <span><?php echo e($product->new_price); ?></span> </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                                <p class="text-center">No products found</p>
+                                            <?php endif; ?>
+
+                                        </div>
+
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row common-see-all-row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <a class=" common-see-all-sm" href="/category/undefined">See All</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="new-arrval-main fantastic-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="common-title mb-35">
+                            <div class="fantastic d-flex align-items-center">
+                                <img src="<?php echo e(asset('/frontEnd/images/fire.gif')); ?>" alt="" class="img-fluid">
+                                <h2>Sale</h2>
+                            </div>
+                            <a class="text-end nav-link see-all-lg" href="/shop?circular_items=1">See All <i
+                                    class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="flas-counter"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <?php $__currentLoopData = $hotdeal_top; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="swiper-slide" role="group" aria-label=""
+                                        style="width: 369.2px; margin-right: 10px;">
+                                        <div class="single-product">
+                                            <div class="image-box">
+                                                <a href="<?php echo e(route('product', $product->slug)); ?>">
+
+                                                    <?php
+                                                        $oldPrice = $product->old_price;
+                                                        $newPrice = $product->new_price;
+
+                                                        if ($oldPrice > 0) {
+                                                            $discount = (($oldPrice - $newPrice) / $oldPrice) * 100;
+                                                            $discount = round($discount); // round kore integer %
+                                                        } else {
+                                                            $discount = 0;
+                                                        }
+                                                    ?>
+
+
+                                                    <img src="<?php echo e(asset($product->image->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>"
+                                                        alt="" class="img-fluid primary-image">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/a.jpg')); ?>" alt=""
+                                                        class="img-fluid secondary-image">
+                                                    <?php if($discount > 0): ?>
+                                                        <div class="flashsale-tag">
+                                                            <span class="value"><?php echo e($discount); ?></span>
+                                                            <span class="percent"> %</span><span class="off">off</span>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </a>
+                                                <a class="btn add-towish-btn ">
+                                                    <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                                <div class="product-view-sets">
+                                                    <ul class="nav">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="#">
+                                                                <i class="icofont-cart-alt"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="javascript:void(0)" class="nav-link">
+                                                                <i class="icofont-eye-alt" data-bs-toggle="modal"
+                                                                    data-bs-target="#productQuickView"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="product-description">
+                                                <h4 class="product-name">
+                                                    <a href="<?php echo e(route('product', $product->slug)); ?>"><?php echo e($product->name); ?></a>
+                                                </h4>
+                                                <p class="price">৳ <span class="mr-2"><?php echo e($product->new_price); ?></span>
+                                                    <del><?php echo e($product->old_price); ?></del> </p>
+                                            </div>
+                                            <div class="sailor-club-discount d-none">
+                                                <div class="sailor-club-discount-logo"></div>
+                                                <div class="discount">
+                                                    <div>50</div>
+                                                </div>
+                                            </div>
+                                            <div class="product-level-tag-flex"></div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+
+
+                            <div class="swiper-button-prev">
+                                <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row common-see-all-row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"><a class="common-see-all-sm"
+                            href="/shop?featured=1">See All</a></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="doublead-banner-main my-35">
+            <div class="container-fluid">
+                <div class="row g-1 g-lg-4">
+                    <div class="col-6">
+                        <div class="double-add-flex">
+                            <a href="#">
+                                <img src="<?php echo e(asset('/frontEnd/images/b1.jpg')); ?>" alt="" class="img-fluid"></a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="double-add-flex">
+                            <a href="#">
+                                <img src="<?php echo e(asset('/frontEnd/images/b2.jpg')); ?>" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="new-arrval-main mb-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="common-title mb-35">
+                            <h2>Customer Reviews</h2>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="flas-counter"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="customer-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="single-product">
+                                        <div class="card">
+                                            <div class="product-image" style="min-height: unset;">
+                                                <a href="/#">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/r.jpg')); ?>" alt=""
+                                                        class="img-fluid primary-image"></a>
+                                            </div>
+                                            <div class="product-description d-none">
+                                                <h4 class="product-name"><a href="/#">good</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-product">
+                                        <div class="card">
+                                            <div class="product-image" style="min-height: unset;">
+                                                <a href="/#">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/r.jpg')); ?>" alt=""
+                                                        class="img-fluid primary-image"></a>
+                                            </div>
+                                            <div class="product-description d-none">
+                                                <h4 class="product-name"><a href="/#">good</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-product">
+                                        <div class="card">
+                                            <div class="product-image" style="min-height: unset;">
+                                                <a href="/#">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/r.jpg')); ?>" alt=""
+                                                        class="img-fluid primary-image"></a>
+                                            </div>
+                                            <div class="product-description d-none">
+                                                <h4 class="product-name"><a href="/#">good</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-product">
+                                        <div class="card">
+                                            <div class="product-image" style="min-height: unset;">
+                                                <a href="/#">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/r.jpg')); ?>" alt=""
+                                                        class="img-fluid primary-image"></a>
+                                            </div>
+                                            <div class="product-description d-none">
+                                                <h4 class="product-name"><a href="/#">good</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="single-product">
+                                        <div class="card">
+                                            <div class="product-image" style="min-height: unset;">
+                                                <a href="/#">
+                                                    <img src="<?php echo e(asset('/frontEnd/images/r.jpg')); ?>" alt=""
+                                                        class="img-fluid primary-image">
+                                                </a>
+                                            </div>
+                                            <div class="product-description d-none">
+                                                <h4 class="product-name"><a href="/#">good</a></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row common-see-all-row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"><a class="common-see-all-sm"
+                            href="/shop?featured=1">See All</a></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="megazin-main new-arrval-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="blog-header">
+                            <h3>magazine </h3>
+                            <p>latest blog from sailor </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide" role="" style="width: 369.2px; margin-right: 10px;">
+                                    <div class="megazin-box">
+                                        <div class="megazine-bg"
+                                            style="background: url('<?php echo e(asset('/frontEnd/images/blog.png')); ?>') no-repeat;">
+                                            <div class="megazine-content">
+                                                <h5>admin</h5>
+                                                <h3>
+                                                    <a href="javascript:void(0)">Excepteur non dolore</a>
+                                                </h3>
+                                                <p>Explicabo Neque ips232</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="swiper-button-prev">
+                                <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next">
+                                <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontEnd.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH X:\sagor\sailor\resources\views/frontEnd/layouts/pages/index.blade.php ENDPATH**/ ?>

@@ -34,8 +34,31 @@ class FrontendController extends Controller
     public function index()
     {
         // return "Welcome to Kenakatar.com";
-        $frontcategory = Category::where(['status' => 1])
+        // $frontcategory = Category::where(['status' => 1])
+        //     ->where('front_view', 1)
+        //     ->select('id', 'name', 'image', 'slug', 'status')
+        //     ->get();
+        // $frontcategoryPluck = $frontcategory->pluck('id')->toArray();
+        // $frontcategory->load(['products' => function ($query) use ($frontcategoryPluck) {
+        //     $query->whereIn('category_id', $frontcategoryPluck)
+        //         ->where('status', 1)
+        //         ->select('id', 'name', 'slug', 'new_price', 'old_price', 'category_id')
+        //         ->with('image')
+        //         ->limit(12);
+        // }]);
+
+        $frontcategory = Category::where('status', 1)
+            ->where('front_view', 1)
             ->select('id', 'name', 'image', 'slug', 'status')
+            ->with([
+                'products' => function ($q) {
+                    $q->where('status', 1)
+                      ->select('id', 'name', 'slug', 'new_price', 'old_price', 'category_id')
+                      ->with('image')
+                      ->orderBy('id', 'DESC')
+                      ->limit(12);
+                }
+            ])
             ->get();
 
         $sliders = Banner::where(['status' => 1, 'category_id' => 1])
@@ -698,5 +721,20 @@ class FrontendController extends Controller
     public function offers()
     {
         return view('frontEnd.layouts.pages.offers');
+    }
+
+
+
+
+
+    //sagor vai 
+    
+
+    
+
+    public function cartView() {
+        
+
+        return view('frontEnd.layouts.customer.cart');
     }
 }

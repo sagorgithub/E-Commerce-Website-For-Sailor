@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product View Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Professional zoom container */
+    .zoom-container {
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .zoom-container img {
+      transition: transform 0.2s ease-out;
+      transform-origin: center center;
+    }
+
+    /* Active variant border */
+    .variant-img.active {
+      border: 2px solid #3b82f6;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-10">
+
+<div class="max-w-6xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+  <div class="flex flex-col md:flex-row gap-6">
+
+    <!-- Left: Vertical Variant Images -->
+    <div class="flex flex-row md:flex-col gap-4 md:w-24">
+      <img
+        src="assets/images/1.jpg"
+        data-image="assets/images/1.jpg"
+        class="variant-img w-20 cursor-pointer border rounded active">
+
+      <img
+        src="assets/images/2.jpg"
+        data-image="assets/images/2.jpg"
+        class="variant-img w-20 cursor-pointer border rounded">
+
+      <img
+        src="assets/images/3.jpg"
+        data-image="assets/images/3.jpg"
+        class="variant-img w-20 cursor-pointer border rounded">
+
+      <img
+        src="assets/images/4.jpg"
+        data-image="assets/images/4.jpg"
+        class="variant-img w-20 cursor-pointer border rounded">
+    </div>
+
+    <!-- Right: Main Image -->
+    <div class="flex-1 relative">
+      <div class="zoom-container w-full h-[500px] border rounded-xl flex items-center justify-center bg-gray-50">
+        <img id="mainImage" src="assets/images/1.jpg"
+             class="w-full h-full object-contain">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const variants = document.querySelectorAll('.variant-img');
+  const mainImage = document.getElementById('mainImage');
+  let currentIndex = 0;
+
+  // Click on variant
+  variants.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      mainImage.src = img.dataset.image;
+      currentIndex = index;
+      variants.forEach(v => v.classList.remove('active'));
+      img.classList.add('active');
+    });
+  });
+
+
+  // Zoom effect with cursor tracking
+  const zoomContainer = document.querySelector('.zoom-container');
+
+  zoomContainer.addEventListener('mousemove', (e) => {
+    const rect = zoomContainer.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    mainImage.style.transformOrigin = `${x}% ${y}%`;
+    mainImage.style.transform = 'scale(1.8)';
+  });
+
+  zoomContainer.addEventListener('mouseleave', () => {
+    mainImage.style.transform = 'scale(1)';
+    mainImage.style.transformOrigin = 'center center';
+  });
+</script>
+
+</body>
+</html>

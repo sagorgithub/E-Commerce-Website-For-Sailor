@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/fonts/bebas-font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/icofont@1.0.1-alpha.1/icofont.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <title>Sailor | Sailing Life</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <meta name="next-head-count" content="11">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="theme-color" content="#fff">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <style id="__jsx-dc0f4aac11d231c9">
+        @media(max-width:414px) {
+            .copyright.jsx-dc0f4aac11d231c9 p.jsx-dc0f4aac11d231c9 {
+                font-size: 10px !important
+            }
+
+            .copyright.jsx-dc0f4aac11d231c9 p.jsx-dc0f4aac11d231c9 a.jsx-dc0f4aac11d231c9 {
+                font-size: 10px !important
+            }
+        }
+
+        @media screen and (max-width:991px) {
+            .copyright.jsx-dc0f4aac11d231c9 {
+                margin-bottom: 60px !important
+            }
+
+            .copyright.jsx-dc0f4aac11d231c9 p.jsx-dc0f4aac11d231c9 {
+                font-size: 12px !important
+            }
+
+            .copyright.jsx-dc0f4aac11d231c9 p.jsx-dc0f4aac11d231c9 a.jsx-dc0f4aac11d231c9 {
+                font-size: 12px !important
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style_tow.css">
+    <link rel="stylesheet" href="assets/fonts/bebas-regular-webfont.woff2">
+    <link rel="stylesheet" href="assets/fonts/icofont.c6ed992f.woff2">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js" type="text/javascript"></script>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js" type="text/javascript"></script>
+    <style>
+        .main-slider img.img-fluid {
+            width: 100% !important;
+            height: auto !important;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="top-header" style="background: rgb(43, 45, 66);">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3><a href="" target="_blank"><span>Step into the Festive Season with Sailor</span></a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="first-nav">
+            <nav class="navbar navbar-expand-lg bg-white">
+                <div class="container">
+                    <span class="navbar-text">Sailing Life</span>
+                    <ul class="navbar-nav ms-auto mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">log in</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="/page/about-us">about us</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-none">
+                            <a class="nav-link" href="/blog">blog</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="/login">my wishlist</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="/cart">cart</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="/compare">compare(0)</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <section class="middle-nav">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="row align-items-center">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                        <a href="/">
+                            <div class="logo-box">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 205.24 115.79">
+                                    <defs></defs>
+                                    <path class="cls-1"
+                                        d="M35.1 95.53a14.7 14.7 0 01-4.32 10.85 16.43 16.43 0 01-11.88 4.47A16.54 16.54 0 017 106.42a14.61 14.61 0 01-4.6-10.89V86.2h11.74v15.91c0 4 1.58 6 4.76 6s4.54-2 4.54-6v-11.5c0-4.85-1.37-8.58-4.1-11.3L7 67.15c-3.08-3-4.62-7.51-4.62-13.35v-7.2a14.65 14.65 0 014.5-10.93q4.46-4.41 11.72-4.41t11.74 4.41a14.68 14.68 0 014.47 10.93v9.32H23.15V40c0-4-1.52-6-4.55-6s-4.46 2-4.46 6v10.33c0 4.86 1.34 8.58 4 11.23l12.34 12.16c3.1 3.1 4.62 7.55 4.62 13.42zM78 110.1H62.47V108a12.48 12.48 0 01-8.47 2.85c-8.32 0-12.46-4.57-12.46-13.78V79.72c0-9.64 5.76-14.5 17.29-14.5h3.61V40c0-4-1.47-6-4.41-6s-4.33 2-4.33 6v15.92H42V46.6q0-7 4.36-11.15c2.92-2.76 6.81-4.19 11.7-4.19s8.84 1.43 11.74 4.19 4.34 6.49 4.34 11.15v60.79zm-15.48-4.82V68H59c-3.81 0-5.72 2-5.72 5.92v28.21c0 3.79 1.35 5.72 4 5.72a7.31 7.31 0 005.19-2.57zM99.86 110.1H80.63l3.78-2.71V34.72L80.63 32h15.5v75.4zM107 107.39V5h15.4l-3.73 2.7v99.74l3.73 2.71h-19.24zM161.7 95.53a14.39 14.39 0 01-4.8 10.89 18.89 18.89 0 01-24.31 0 14.25 14.25 0 01-4.84-10.89V46.6a14.11 14.11 0 014.84-10.88 18.79 18.79 0 0124.31 0 14.24 14.24 0 014.8 10.88zm-11.7 6.58V40c0-4-1.75-6-5.22-6s-5.27 2-5.27 6v62.1c0 4 1.75 6 5.27 6s5.22-1.95 5.22-5.99zM202.4 55.92h-11.74V40c0-3.84-1.19-5.75-3.59-5.75-1.56 0-3.13.86-4.68 2.56v70.57l3.8 2.71H166.9l3.82-2.71V34.72L166.9 32h15.49v2.14a12.25 12.25 0 018.27-2.87q11.75 0 11.74 13.78z">
+                                    </path>
+                                    <path class="cls-2" d="M96.13 23.86h-15.5l3.78-2.68L96.13 5.84v18z" fill="#d02128">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                        <div class="search-box-flex">
+                            <div class="search-box">
+                                <input type="search" class="form-control search-input" placeholder="Search" value="">
+                            </div>
+                            <div class="d-none">
+
+                            </div>
+                            <div class="dropdown-box">
+                                <select class="form-select form-contol" aria-label="Default select example">
+                                    <option value="">categories</option>
+                                    <option value="1174">Clearance Sale 2025</option>
+                                    <option value="1165">Latest Collection/25</option>
+                                    <option value="1187">Sale Offer</option>
+                                    <option value="1181">Winter/25</option>
+                                    <option value="8">MEN</option>
+                                    <option value="9">WOMEN</option>
+                                    <option value="225">KID'S</option>
+                                    <option value="136">NEWBORN</option>
+                                    <option value="100">FOOTWEAR</option>
+                                    <option value="12">ACCESSORIES</option>
+                                    <option value="829">FESTIVE SPOT LIGHT</option>
+                                </select>
+                            </div>
+                            <div class="search-btn-box">
+                                <button class="btn search-btn">
+                                    <i class="icofont-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn mobile-search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-2">
+                        <div class="support-icon-flex">
+                            <div class="icon">
+                                <i class="icofont-ui-call"></i>
+                            </div>
+                            <div class="text">
+                                <p>call us now</p>
+                                <h5><a class="text-black" href="tel:01777702000">01777702000</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-2 col-lg-3">
+                        <div class="icon-sets">
+                            <ul class="nav justify-content-end">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">
+                                        <i class="fa-regular fa-heart"></i>
+                                        <sup class="badge badge-pill"><span>0</span></sup></a>
+                                </li>
+                                <li class="nav-item position-relative"><a class="nav-link" href="/login"><i
+                                            class="icofont-cart"></i><sup class="badge badge-pill"><span
+                                                class="text-d2">0</span></sup></a>
+                                    <div class="shopping-bag-main">
+                                        <div class="shopping-title">
+                                            <h3>Shopping bag (0)</h3>
+                                        </div>
+                                        <div class="shopping-scrol" data-simplebar="true">
+                                            <h6>Add Something to Cart</h6>
+                                        </div>
+                                        <div class="amount-box">
+                                            <h3 class="text-start"> subtotal </h3>
+                                            <h3 class="text-end">৳ 0</h3>
+                                        </div>
+                                        <div class="button-sets"><a class="btn btn-outline-primary view-shopping"
+                                                href="/cart">view shopping bag</a><a class="btn btn-secondary checkout"
+                                                href="/login">checkout</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade search-modal d-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="text-center">Search Box</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-box-flex">
+                            <div class="mb-3">
+                                <div class="search-box"><input type="search" class="form-control search-input"
+                                        placeholder="Search"></div>
+                                <div class="d-none">
+                                    <h5>No Product Found</h5>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="dropdown-box"><select class="form-select form-contol"
+                                        aria-label="Default select example">
+                                        <option value="">categories</option>
+                                        <option value="1174">Clearance Sale 2025</option>
+                                        <option value="1165">Latest Collection/25</option>
+                                        <option value="1187">Sale Offer</option>
+                                        <option value="1181">Winter/25</option>
+                                        <option value="8">MEN</option>
+                                        <option value="9">WOMEN</option>
+                                        <option value="225">KID'S</option>
+                                        <option value="136">NEWBORN</option>
+                                        <option value="100">FOOTWEAR</option>
+                                        <option value="12">ACCESSORIES</option>
+                                        <option value="829">FESTIVE SPOT LIGHT</option>
+                                    </select></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="search-btn-box"><button class="btn search-btn">Search</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="log-register-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="login-reg-tabs">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation"><button class="nav-link active" id="login-tab"
+                                        data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab"
+                                        aria-controls="login-tab-pane" aria-selected="true">login</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="reg-tab"
+                                        data-bs-toggle="tab" data-bs-target="#reg-tab-pane" type="button" role="tab"
+                                        aria-controls="reg-tab-pane" aria-selected="false">registration</button></li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel"
+                                    aria-labelledby="login-tab" tabindex="0">
+                                    <form action="" method="post">
+                                        <div class="form-group"><input type="email" name="email" class="form-control"
+                                                placeholder="Enter email / phone number"></div>
+                                        <div class="form-group"><input type="password" name="password"
+                                                class="form-control" id="" placeholder="Password"></div><input
+                                            type="checkbox" name="remember" id="remember" class=""> &nbsp; Keep me
+                                        logged in<button type="button" class="btn btn-primary login-btn">Login
+                                            Now</button>
+                                        <div class="w-100 text-center"><a class="forget-pass">Forgot your password?</a>
+                                        </div>
+                                    </form>
+                                    <div class="modal fade" id="staticBackdropForgot" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Forgot
+                                                        Password</h1>
+                                                </div>
+                                                <div class="modal-body" id="forgot_modal_body"><label
+                                                        for="">Email/Phone</label><input type="text"
+                                                        name="email_or_phone" class="form-control"
+                                                        placeholder="Enter email / phone number">
+                                                    <div class="text-danger"></div><small>please enter the email/phone
+                                                        that register here.</small>
+                                                </div>
+                                                <div class="modal-footer" id="forgot_modal_footer"><button type="button"
+                                                        class="btn btn-outline-danger"
+                                                        data-bs-dismiss="modal">Close</button><button type="button"
+                                                        class="btn btn-outline-dark">Send Code</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="nav social-login-nav">
+                                        <li class="nav-item"></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="reg-tab-pane" role="tabpanel" aria-labelledby="reg-tab"
+                                    tabindex="0">
+                                    <form action="" novalidate="">
+                                        <div class="row g-0">
+                                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 "><select
+                                                    name="country_code" class="form-control mb-0 mb-sm-20" id="">
+                                                    <option value="AD" data-dial="376">AD</option>
+                                                    <option value="AF" data-dial="93">AF</option>
+                                                    <option value="AG" data-dial="1268">AG</option>
+                                                    <option value="AI" data-dial="1264">AI</option>
+                                                    <option value="AL" data-dial="355">AL</option>
+                                                    <option value="AM" data-dial="374">AM</option>
+                                                    <option value="AO" data-dial="244">AO</option>
+                                                    <option value="AQ" data-dial="672">AQ</option>
+                                                    <option value="AR" data-dial="54">AR</option>
+                                                    <option value="AS" data-dial="1684">AS</option>
+                                                    <option value="AT" data-dial="43">AT</option>
+                                                    <option value="AU" data-dial="61">AU</option>
+                                                    <option value="AW" data-dial="297">AW</option>
+                                                    <option value="AX" data-dial="358">AX</option>
+                                                    <option value="AZ" data-dial="994">AZ</option>
+                                                    <option value="BA" data-dial="387">BA</option>
+                                                    <option value="BB" data-dial="1246">BB</option>
+                                                    <option value="BD" data-dial="880">BD</option>
+                                                    <option value="BE" data-dial="32">BE</option>
+                                                    <option value="BF" data-dial="226">BF</option>
+                                                    <option value="BG" data-dial="359">BG</option>
+                                                    <option value="BH" data-dial="973">BH</option>
+                                                    <option value="BI" data-dial="257">BI</option>
+                                                    <option value="BJ" data-dial="229">BJ</option>
+                                                    <option value="BL" data-dial="590">BL</option>
+                                                    <option value="BM" data-dial="1441">BM</option>
+                                                    <option value="BN" data-dial="673">BN</option>
+                                                    <option value="BO" data-dial="591">BO</option>
+                                                    <option value="BQ" data-dial="5997">BQ</option>
+                                                    <option value="BR" data-dial="55">BR</option>
+                                                    <option value="BT" data-dial="975">BT</option>
+                                                    <option value="BV" data-dial="47">BV</option>
+                                                    <option value="BW" data-dial="267">BW</option>
+                                                    <option value="BY" data-dial="375">BY</option>
+                                                    <option value="BZ" data-dial="501">BZ</option>
+                                                    <option value="CA" data-dial="1">CA</option>
+                                                    <option value="CH" data-dial="41">CH</option>
+                                                    <option value="CI" data-dial="225">CI</option>
+                                                    <option value="CL" data-dial="56">CL</option>
+                                                    <option value="CM" data-dial="237">CM</option>
+                                                    <option value="CN" data-dial="86">CN</option>
+                                                    <option value="CO" data-dial="57">CO</option>
+                                                    <option value="CR" data-dial="506">CR</option>
+                                                    <option value="CU" data-dial="53">CU</option>
+                                                    <option value="CV" data-dial="238">CV</option>
+                                                    <option value="CW" data-dial="599">CW</option>
+                                                    <option value="CX" data-dial="61">CX</option>
+                                                    <option value="CY" data-dial="357">CY</option>
+                                                    <option value="DE" data-dial="49">DE</option>
+                                                    <option value="DJ" data-dial="253">DJ</option>
+                                                    <option value="DK" data-dial="45">DK</option>
+                                                    <option value="DM" data-dial="767">DM</option>
+                                                    <option value="DZ" data-dial="213">DZ</option>
+                                                    <option value="EC" data-dial="593">EC</option>
+                                                    <option value="EE" data-dial="372">EE</option>
+                                                    <option value="EG" data-dial="20">EG</option>
+                                                    <option value="EH" data-dial="212">EH</option>
+                                                    <option value="ER" data-dial="291">ER</option>
+                                                    <option value="ES" data-dial="34">ES</option>
+                                                    <option value="ET" data-dial="251">ET</option>
+                                                    <option value="FI" data-dial="358">FI</option>
+                                                    <option value="FJ" data-dial="679">FJ</option>
+                                                    <option value="FM" data-dial="691">FM</option>
+                                                    <option value="FR" data-dial="33">FR</option>
+                                                    <option value="GA" data-dial="241">GA</option>
+                                                    <option value="GD" data-dial="1473">GD</option>
+                                                    <option value="GE" data-dial="995">GE</option>
+                                                    <option value="GF" data-dial="594">GF</option>
+                                                    <option value="GG" data-dial="44">GG</option>
+                                                    <option value="GH" data-dial="233">GH</option>
+                                                    <option value="GI" data-dial="350">GI</option>
+                                                    <option value="GL" data-dial="299">GL</option>
+                                                    <option value="GN" data-dial="224">GN</option>
+                                                    <option value="GP" data-dial="590">GP</option>
+                                                    <option value="GQ" data-dial="240">GQ</option>
+                                                    <option value="GR" data-dial="30">GR</option>
+                                                    <option value="GS" data-dial="500">GS</option>
+                                                    <option value="GT" data-dial="502">GT</option>
+                                                    <option value="GU" data-dial="1">GU</option>
+                                                    <option value="GW" data-dial="245">GW</option>
+                                                    <option value="GY" data-dial="592">GY</option>
+                                                    <option value="HK" data-dial="852">HK</option>
+                                                    <option value="HN" data-dial="504">HN</option>
+                                                    <option value="HR" data-dial="385">HR</option>
+                                                    <option value="HT" data-dial="509">HT</option>
+                                                    <option value="HU" data-dial="36">HU</option>
+                                                    <option value="ID" data-dial="62">ID</option>
+                                                    <option value="IE" data-dial="353">IE</option>
+                                                    <option value="IL" data-dial="972">IL</option>
+                                                    <option value="IM" data-dial="44">IM</option>
+                                                    <option value="IN" data-dial="91">IN</option>
+                                                    <option value="IO" data-dial="246">IO</option>
+                                                    <option value="IQ" data-dial="964">IQ</option>
+                                                    <option value="IR" data-dial="98">IR</option>
+                                                    <option value="IS" data-dial="354">IS</option>
+                                                    <option value="IT" data-dial="39">IT</option>
+                                                    <option value="JE" data-dial="44">JE</option>
+                                                    <option value="JM" data-dial="876">JM</option>
+                                                    <option value="JO" data-dial="962">JO</option>
+                                                    <option value="JP" data-dial="81">JP</option>
+                                                    <option value="KE" data-dial="254">KE</option>
+                                                    <option value="KG" data-dial="996">KG</option>
+                                                    <option value="KH" data-dial="855">KH</option>
+                                                    <option value="KP" data-dial="850">KP</option>
+                                                    <option value="KR" data-dial="82">KR</option>
+                                                    <option value="KI" data-dial="686">KI</option>
+                                                    <option value="KN" data-dial="1869">KN</option>
+                                                    <option value="KW" data-dial="965">KW</option>
+                                                    <option value="KZ" data-dial="7">KZ</option>
+                                                    <option value="LB" data-dial="961">LB</option>
+                                                    <option value="LC" data-dial="1758">LC</option>
+                                                    <option value="LI" data-dial="423">LI</option>
+                                                    <option value="LK" data-dial="94">LK</option>
+                                                    <option value="LR" data-dial="231">LR</option>
+                                                    <option value="LS" data-dial="266">LS</option>
+                                                    <option value="LT" data-dial="370">LT</option>
+                                                    <option value="LU" data-dial="352">LU</option>
+                                                    <option value="LV" data-dial="371">LV</option>
+                                                    <option value="LY" data-dial="218">LY</option>
+                                                    <option value="MA" data-dial="212">MA</option>
+                                                    <option value="MC" data-dial="377">MC</option>
+                                                    <option value="ME" data-dial="382">ME</option>
+                                                    <option value="MF" data-dial="590">MF</option>
+                                                    <option value="MG" data-dial="261">MG</option>
+                                                    <option value="ML" data-dial="223">ML</option>
+                                                    <option value="MM" data-dial="95">MM</option>
+                                                    <option value="MN" data-dial="976">MN</option>
+                                                    <option value="MO" data-dial="853">MO</option>
+                                                    <option value="MQ" data-dial="596">MQ</option>
+                                                    <option value="MR" data-dial="222">MR</option>
+                                                    <option value="MS" data-dial="1664">MS</option>
+                                                    <option value="MT" data-dial="356">MT</option>
+                                                    <option value="MU" data-dial="230">MU</option>
+                                                    <option value="MV" data-dial="960">MV</option>
+                                                    <option value="MW" data-dial="265">MW</option>
+                                                    <option value="MX" data-dial="52">MX</option>
+                                                    <option value="MY" data-dial="60">MY</option>
+                                                    <option value="MZ" data-dial="258">MZ</option>
+                                                    <option value="NA" data-dial="264">NA</option>
+                                                    <option value="NC" data-dial="687">NC</option>
+                                                    <option value="NF" data-dial="672">NF</option>
+                                                    <option value="NG" data-dial="234">NG</option>
+                                                    <option value="NI" data-dial="505">NI</option>
+                                                    <option value="NO" data-dial="47">NO</option>
+                                                    <option value="NP" data-dial="977">NP</option>
+                                                    <option value="NR" data-dial="674">NR</option>
+                                                    <option value="NU" data-dial="683">NU</option>
+                                                    <option value="NZ" data-dial="64">NZ</option>
+                                                    <option value="OM" data-dial="968">OM</option>
+                                                    <option value="PA" data-dial="507">PA</option>
+                                                    <option value="PE" data-dial="51">PE</option>
+                                                    <option value="PF" data-dial="689">PF</option>
+                                                    <option value="PG" data-dial="675">PG</option>
+                                                    <option value="PK" data-dial="92">PK</option>
+                                                    <option value="PL" data-dial="48">PL</option>
+                                                    <option value="PM" data-dial="508">PM</option>
+                                                    <option value="PN" data-dial="64">PN</option>
+                                                    <option value="PR" data-dial="1">PR</option>
+                                                    <option value="PS" data-dial="970">PS</option>
+                                                    <option value="PT" data-dial="351">PT</option>
+                                                    <option value="PW" data-dial="680">PW</option>
+                                                    <option value="PY" data-dial="595">PY</option>
+                                                    <option value="QA" data-dial="974">QA</option>
+                                                    <option value="RE" data-dial="262">RE</option>
+                                                    <option value="RO" data-dial="40">RO</option>
+                                                    <option value="RS" data-dial="381">RS</option>
+                                                    <option value="RU" data-dial="7">RU</option>
+                                                    <option value="RW" data-dial="250">RW</option>
+                                                    <option value="SA" data-dial="966">SA</option>
+                                                    <option value="SB" data-dial="677">SB</option>
+                                                    <option value="SC" data-dial="248">SC</option>
+                                                    <option value="SE" data-dial="46">SE</option>
+                                                    <option value="SG" data-dial="65">SG</option>
+                                                    <option value="SH" data-dial="290">SH</option>
+                                                    <option value="SI" data-dial="386">SI</option>
+                                                    <option value="SJ" data-dial="4779">SJ</option>
+                                                    <option value="SK" data-dial="421">SK</option>
+                                                    <option value="SL" data-dial="232">SL</option>
+                                                    <option value="SM" data-dial="378">SM</option>
+                                                    <option value="SN" data-dial="221">SN</option>
+                                                    <option value="SO" data-dial="252">SO</option>
+                                                    <option value="SR" data-dial="597">SR</option>
+                                                    <option value="SS" data-dial="211">SS</option>
+                                                    <option value="ST" data-dial="239">ST</option>
+                                                    <option value="SV" data-dial="503">SV</option>
+                                                    <option value="SX" data-dial="1721">SX</option>
+                                                    <option value="SY" data-dial="963">SY</option>
+                                                    <option value="TD" data-dial="235">TD</option>
+                                                    <option value="TG" data-dial="228">TG</option>
+                                                    <option value="TH" data-dial="66">TH</option>
+                                                    <option value="TJ" data-dial="992">TJ</option>
+                                                    <option value="TK" data-dial="690">TK</option>
+                                                    <option value="TL" data-dial="670">TL</option>
+                                                    <option value="TM" data-dial="993">TM</option>
+                                                    <option value="TN" data-dial="216">TN</option>
+                                                    <option value="TO" data-dial="676">TO</option>
+                                                    <option value="TR" data-dial="90">TR</option>
+                                                    <option value="TT" data-dial="868">TT</option>
+                                                    <option value="TV" data-dial="688">TV</option>
+                                                    <option value="TZ" data-dial="255">TZ</option>
+                                                    <option value="UA" data-dial="380">UA</option>
+                                                    <option value="UG" data-dial="256">UG</option>
+                                                    <option value="US" data-dial="1">US</option>
+                                                    <option value="UY" data-dial="598">UY</option>
+                                                    <option value="UZ" data-dial="998">UZ</option>
+                                                    <option value="VC" data-dial="1784">VC</option>
+                                                    <option value="VE" data-dial="58">VE</option>
+                                                    <option value="VG" data-dial="1284">VG</option>
+                                                    <option value="VI" data-dial="1340">VI</option>
+                                                    <option value="VN" data-dial="84">VN</option>
+                                                    <option value="VU" data-dial="678">VU</option>
+                                                    <option value="WF" data-dial="681">WF</option>
+                                                    <option value="WS" data-dial="685">WS</option>
+                                                    <option value="YE" data-dial="967">YE</option>
+                                                    <option value="YT" data-dial="262">YT</option>
+                                                    <option value="ZA" data-dial="27">ZA</option>
+                                                    <option value="ZM" data-dial="260">ZM</option>
+                                                    <option value="ZW" data-dial="263">ZW</option>
+                                                    <option value="SZ" data-dial="268">SZ</option>
+                                                    <option value="MK" data-dial="389">MK</option>
+                                                    <option value="PH" data-dial="63">PH</option>
+                                                    <option value="NL" data-dial="31">NL</option>
+                                                    <option value="AE" data-dial="971">AE</option>
+                                                    <option value="MD" data-dial="373">MD</option>
+                                                    <option value="GM" data-dial="220">GM</option>
+                                                    <option value="DO" data-dial="1">DO</option>
+                                                    <option value="SD" data-dial="249">SD</option>
+                                                    <option value="LA" data-dial="856">LA</option>
+                                                    <option value="TW" data-dial="886">TW</option>
+                                                    <option value="CG" data-dial="242">CG</option>
+                                                    <option value="CZ" data-dial="420">CZ</option>
+                                                    <option value="GB" data-dial="44">GB</option>
+                                                    <option value="NE" data-dial="227">NE</option>
+                                                    <option value="CD" data-dial="243">CD</option>
+                                                    <option value="BS" data-dial="1 242">BS</option>
+                                                    <option value="CC" data-dial="61 891">CC</option>
+                                                    <option value="CF" data-dial="236">CF</option>
+                                                    <option value="CK" data-dial="682">CK</option>
+                                                    <option value="FK" data-dial="500">FK</option>
+                                                    <option value="FO" data-dial="298">FO</option>
+                                                    <option value="HM" data-dial="672">HM</option>
+                                                    <option value="KM" data-dial="269">KM</option>
+                                                    <option value="KY" data-dial="1 345">KY</option>
+                                                    <option value="MH" data-dial="692">MH</option>
+                                                    <option value="MP" data-dial="1 670">MP</option>
+                                                    <option value="TC" data-dial="1 649">TC</option>
+                                                    <option value="TF" data-dial="672">TF</option>
+                                                    <option value="UM" data-dial="1">UM</option>
+                                                    <option value="VA" data-dial="39">VA</option>
+                                                    <option value="XK" data-dial="383">XK</option>
+                                                    <option value="AN" data-dial="599">AN</option>
+                                                </select></div>
+                                            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 " id="phone-code"><input
+                                                    type="text" class="form-control mb-0" placeholder="01XXXXXXXXX"
+                                                    name="phone"></div>
+                                            <div class="text-danger mb-3"></div>
+                                            <div class="col-md-12 " id="email"><input type="email" name="email"
+                                                    class="form-control "
+                                                    placeholder="Enter email address (example@example.com)">
+                                                <div class="text-danger mb-3"></div>
+                                            </div>
+                                            <div class="text-danger"></div>
+                                        </div>
+                                        <div class="form-group"><input type="password" name="password"
+                                                class="form-control" id="" placeholder="Enter Password">
+                                            <div class="text-danger mb-3"></div>
+                                        </div>
+                                        <div class="form-group"><input type="password" name="password_confirmation"
+                                                class="form-control" id="" placeholder="Enter confirm-password"></div>
+                                        <button type="submit" class="btn btn-primary login-btn mt-0">create
+                                            account</button>
+                                        <div class="terms">
+                                            <p>By continuing we will process your data, obtained through your browsing
+                                                on the website, to offer you content related to your tastes, based on
+                                                your interactions with the brand. Bear in mind that you can oppose this
+                                                treatment. You should accept<a href="https://www.sailor.clothing/">terms
+                                                    and policy</a> of https://www.sailor.clothing/</p>
+                                        </div>
+                                    </form>
+                                    <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1"
+                                        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Verification
+                                                        Code</h1>
+                                                </div>
+                                                <div class="modal-body"><label for="">Code</label><input type="text"
+                                                        class="form-control" placeholder="verification code">
+                                                    <div class="text-danger"></div><small>please check your number for
+                                                        the verification code.</small>
+                                                </div>
+                                                <div class="modal-footer"><button type="button"
+                                                        class="btn btn-outline-dark">Resend</button><button
+                                                        type="button" class="btn btn-outline-dark">Verify</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <footer class="jsx-dc0f4aac11d231c9 footer-main">
+        <div class="jsx-dc0f4aac11d231c9 container-fluid">
+            <div class="jsx-dc0f4aac11d231c9 row">
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">CONTACT INFO </h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <ul class="jsx-dc0f4aac11d231c9 nav flex-column">
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a href="#"
+                                    class="jsx-dc0f4aac11d231c9 nav-link ">NINAKABBO 227/A Tejgaon-Gulshan Link Road
+                                    Postal Code: 1208 Dhaka, Bangladesh</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a href="#"
+                                    class="jsx-dc0f4aac11d231c9 nav-link">+8801777758704,+8801777758713</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a href="#"
+                                    class="jsx-dc0f4aac11d231c9 nav-link text-lowercase">hello@sailor.com.bd</a>
+                            </li>
+                        </ul>
+                        <div class="jsx-dc0f4aac11d231c9 footer-social-icons">
+                            <ul class="jsx-dc0f4aac11d231c9">
+                                <li class="jsx-dc0f4aac11d231c9 nav-item first-nav-social-icon"><a
+                                        href="https://www.facebook.com/sailinglife.sailor"
+                                        class="jsx-dc0f4aac11d231c9 nav-link"><i
+                                            class="jsx-dc0f4aac11d231c9 icofont-facebook"></i></a></li>
+                                <li class="jsx-dc0f4aac11d231c9 nav-item first-nav-social-icon"><a
+                                        href="https://www.instagram.com/sailor.bd"
+                                        class="jsx-dc0f4aac11d231c9 nav-link"><i
+                                            class="jsx-dc0f4aac11d231c9 icofont-instagram"></i></a></li>
+                                <li class="jsx-dc0f4aac11d231c9 nav-item first-nav-social-icon"><a
+                                        href="https://www.youtube.com/@SailorbyEpyllion"
+                                        class="jsx-dc0f4aac11d231c9 nav-link"><i
+                                            class="jsx-dc0f4aac11d231c9 icofont-youtube"></i></a></li>
+                                <li class="jsx-dc0f4aac11d231c9 nav-item first-nav-social-icon"><a
+                                        href="https://www.linkedin.com/company/sailor-by-epyllion/"
+                                        class="jsx-dc0f4aac11d231c9 nav-link"><i
+                                            class="jsx-dc0f4aac11d231c9 icofont-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">know us</h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <ul class="jsx-dc0f4aac11d231c9 nav flex-column">
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/page/who-we-are">Who
+                                    we are</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/Sailor-Club">Sailor Club</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/Brand-Social-Responsibilities-BSR">Brand Social Responsibilities
+                                    (BSR)</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/page/Join-Us">Join
+                                    Us</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/page/blog">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">shopping information</h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <ul class="jsx-dc0f4aac11d231c9 nav flex-column">
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/privacy-policy">Privacy Policy Page</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/page/Size-Guide">Size
+                                    Guide</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/page/how-to-shop">How
+                                    to Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">SERVICE INFORMATION </h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <ul class="jsx-dc0f4aac11d231c9 nav flex-column">
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/return-policy">Return and Exchange</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/Shipping--Charges">Shipping &amp; Charges</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/Customer-Service">Customer Service</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/page/Terms-and-Conditions">Terms and Conditions</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="/store-locator">Store
+                                    Locator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col d-none">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">category</h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <ul class="jsx-dc0f4aac11d231c9 nav flex-column">
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="#">Clearance Sale
+                                    2025</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/category/eid-ul-adha-collection25-iad0d">Latest Collection/25</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link "
+                                    href="/category/sale-offer-2025">Sale Offer</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="#">Winter/25</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="#">MEN</a></li>
+                            <li class="jsx-dc0f4aac11d231c9 nav-item"><a class="nav-link " href="#">WOMEN</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-6 col-md-4 col-lg-3 footer-col d-none  ">
+                    <div class="jsx-dc0f4aac11d231c9 footer-title">
+                        <h3 class="jsx-dc0f4aac11d231c9">subscribe us</h3>
+                    </div>
+                    <div class="jsx-dc0f4aac11d231c9 footer-navs">
+                        <div class="jsx-dc0f4aac11d231c9 form-group">
+                            <p class="jsx-dc0f4aac11d231c9 mb-3">Keep yourself updated with the latest Sailor News,
+                                Fashion Updates and Blogs! Subscribe here!</p><input type="email"
+                                id="exampleFormControlInput1" placeholder="Type your email"
+                                class="jsx-dc0f4aac11d231c9 form-control" value=""><button
+                                class="jsx-dc0f4aac11d231c9 btn text-white btn-outline-secondary mt-2">Follow
+                                Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section style="padding:15px 0px;background:#3b3d56;border-top:1px dotted #fff"
+        class="jsx-dc0f4aac11d231c9 copyright">
+        <div class="jsx-dc0f4aac11d231c9 container">
+            <div class="jsx-dc0f4aac11d231c9 row">
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <p style="margin-bottom:0px;color:#fff;font-size:14px;text-transform:capitalize"
+                        class="jsx-dc0f4aac11d231c9 text-center text-md-start">Copyright ©<!-- -->2025<!-- -->
+                        Sailor. All rights reserved</p>
+                </div>
+                <div class="jsx-dc0f4aac11d231c9 col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <p style="margin-bottom:0px;color:#fff;font-size:14px;text-transform:capitalize;text-align:end"
+                        class="jsx-dc0f4aac11d231c9 text-center text-md-end">system design &amp; developed by :
+                        <a href="https://vida.com.bd/" target="_blank" style="color:#d41f27"
+                            class="jsx-dc0f4aac11d231c9">&nbsp; Vida Data Systems Ltd.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="fixmenu-main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="badge badge-pill bg-info"><sup>0</sup></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cart">
+                                <i class="icofont-cart-alt"></i>
+                                <span class="badge badge-pill bg-danger"><sup>0</sup></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <i class="far fa-user"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade quick-view" id="productQuickView" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content"><button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <div class="modal-body p-0">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div
+                                class="swiper swiper-initialized swiper-horizontal swiper-pointer-events quick-view-slider">
+                                <div class="swiper-wrapper" id="swiper-wrapper-08894cb6ad6873cc" aria-live="off"
+                                    style="transition-duration: 0ms;"></div>
+                                <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
+                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false"></div>
+                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false"></div>
+                                <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
+                                </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="product-info-main">
+                                <div class="product-title-flex">
+                                    <div class="title-box">
+                                        <h4> <!-- --> </h4>
+                                        <div class="sku-flex">
+                                            <div class="sku"> </div>
+                                            <div class="rating">
+                                                <ul class="nav">
+                                                    <li class="nav-item"><a class="nav-link" href="#"><i
+                                                                class="fa-solid fa-star"></i></a></li>
+                                                    <li class="nav-item"><a class="nav-link disabled">(<!-- -->)</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box"><a href="#"><i class="fa-solid fa-share-nodes"></i></a>
+                                        <div class="pop-share-main">
+                                            <ul class="nav">
+                                                <li class="nav-item fb"><a class="nav-link" href="#"><i
+                                                            class="fa-brands fa-facebook-f"></i></a></li>
+                                                <li class="nav-item twiter"><a class="nav-link" href="#"><i
+                                                            class="fa-brands fa-twitter"></i></a></li>
+                                                <li class="nav-item printerest"><a class="nav-link" href="#"><i
+                                                            class="fa-brands fa-pinterest-p"></i></a></li>
+                                                <li class="nav-item insta me-0"><a class="nav-link" href="#"><i
+                                                            class="fa-brands fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price">৳ <!-- -->0</div>
+                                <div class="size-lists">
+                                    <h5>color</h5>
+                                    <ul class="nav">
+                                        <li class="nav-item"><a class="nav-link " href="#"></a></li>
+                                    </ul>
+                                </div>
+                                <div class="size-lists">
+                                    <h5>size</h5>
+                                    <ul class="nav"></ul>
+                                </div>
+                                <div class="add-bag-flex">
+                                    <div class="add-bag"> <button class="btn add-to-bag-btn">add to bag</button>
+                                    </div>
+                                    <div class="bg-lightadd-wishlist "><a href="#" class="add-wishlist"><i
+                                                class="bg-light fa-regular fa-heart add-wishlist "></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/script.js" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</body>
+
+</html>

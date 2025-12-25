@@ -861,10 +861,10 @@ h6 {
     font-family: Potro Sans Bangla;
 }
 
-svg {
+/* svg {
     height: 16px;
     width: 16px;
-}
+} */
 
 .cursor {
     cursor: pointer;

@@ -88,6 +88,20 @@ Route::group(['namespace' => 'Frontend', 'middleware' => ['ipcheck', 'check_refe
     Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/home', [FrontendController::class, 'campaigns'])->name('campaigns');
     Route::get('category/{category}', [FrontendController::class, 'category'])->name('category');
+
+
+
+
+    
+    Route::get('customer/cart', [FrontendController::class, 'cartView'])->name('customer.cart');
+
+    Route::post('customer/cart', [ShoppingController::class, 'cart_store'])->name('customer.cart');
+
+
+
+
+
+
     Route::get('skin-type/{skinType}', [FrontendController::class, 'skinType'])->name('skinType');
     // Route::post('skin-type/{skinType}', [FrontendController::class, 'skinType'])->name('skinType.filter');
     Route::get('skin-concerne/{skinConcern}', [FrontendController::class, 'skinConcern'])->name('skinConcern');
@@ -143,7 +157,6 @@ Route::group(['prefix' => 'customer', 'namespace' => 'Frontend', 'middleware' =>
     Route::get('/checkout', [CustomerController::class, 'checkout'])->name('customer.checkout');
     Route::post('/order-save', [CustomerController::class, 'order_save'])->name('customer.ordersave');
     Route::get('/order-success/{id}', [CustomerController::class, 'order_success'])->name('customer.order_success');
-
     Route::get('/order-track', [CustomerController::class, 'order_track'])->name('customer.order_track');
     Route::get('/order-track/result', [CustomerController::class, 'order_track_result'])->name('customer.order_track_result');
 });

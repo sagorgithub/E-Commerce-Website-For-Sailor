@@ -1,6 +1,11 @@
-@extends('frontEnd.layouts.master') @section('title', 'Customer Checkout') @push('css')
-<link rel="stylesheet" href="{{ asset('public/frontEnd/css/select2.min.css') }}" />
-@endpush @section('content')
+@extends('frontEnd.layouts.master') 
+@section('title', 'Customer Checkout') 
+@push('css')
+<link rel="stylesheet" href="{{ asset('frontEnd/css/select2.min.css') }}" />
+<link rel="stylesheet" href="{{ asset('frontEnd/css/style.css') }}" />
+@endpush
+
+@section('content')
 <section class="chheckout-section">
     @php
         $subtotal = Cart::instance('shopping')->subtotal();
@@ -16,7 +21,7 @@
                         @csrf
                         <div class="card">
                            <div class="card-header">
-<h6>আপনার অর্ডারটি কনফার্ম করতে তথ্যগুলো পূরণ করে <span style="color:#fe5200;">"অর্ডার করুন"</span> বাটন এ ক্লিক করুন অথবা ফোনে অর্ডার করতে এই নাম্বার <a href="tel:01836879690">01836879690</a> এর উপরে ক্লিক করুন।   </h6>
+                            <h6>আপনার অর্ডারটি কনফার্ম করতে তথ্যগুলো পূরণ করে <span style="color:#fe5200;">"অর্ডার করুন"</span> বাটন এ ক্লিক করুন অথবা ফোনে অর্ডার করতে এই নাম্বার <a href="tel:01836879690">01836879690</a> এর উপরে ক্লিক করুন।   </h6>
                                 
                             </div>
                             <div class="card-body">

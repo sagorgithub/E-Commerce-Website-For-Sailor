@@ -65,6 +65,7 @@ class ShoppingController extends Controller
         }
 
         $cart_count = Cart::instance('shopping')->count();
+
         
         // Facebook Server-Side Tracking - AddToCart Event
         if (app(FacebookTrackingService::class)->isEnabled()) {
@@ -83,8 +84,12 @@ class ShoppingController extends Controller
             
             app(FacebookTrackingService::class)->sendAddToCartEvent($productData, $userData);
         }
-        
-        return redirect()->route('customer.checkout');
+        return response()->json([
+            'success' => true,
+            'message' => 'Product added to cart',
+            'cart_count' => Cart::instance('shopping')->count()
+        ]);
+        // return redirect()->route('customer.checkout');
     }
 
     public function cart_store_by_now(Request $request)

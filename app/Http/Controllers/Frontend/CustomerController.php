@@ -249,6 +249,8 @@ class CustomerController extends Controller
         Toastr::success('You are logout successfully', 'success!');
         return redirect()->route('customer.login');
     }
+
+
     public function checkout(){
         $shippingcharge = ShippingCharge::where('status',1)->get();
         $select_charge = ShippingCharge::where('status',1)->first();
@@ -546,4 +548,5 @@ class CustomerController extends Controller
             return redirect()->back();
         }
     }
+
 }
