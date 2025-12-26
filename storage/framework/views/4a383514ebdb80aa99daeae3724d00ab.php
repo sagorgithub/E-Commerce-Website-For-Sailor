@@ -231,8 +231,9 @@ unset($__errorArgs, $__bag); ?>
                                    
                                         <tr>
                                             <td>
-                                                <a class="cart_remove" data-id="<?php echo e($value->rowId); ?>"><i
-                                                        class="fas fa-trash text-danger"></i></a>
+                                                <a class="cart_remove" data-id="<?php echo e($value->rowId); ?>">
+                                                    <i class="fas fa-trash text-danger"></i>
+                                                </a>
                                             </td>
                                             <td class="text-left">
                                                 <a href="<?php echo e(route('product', $value->options->slug)); ?>"> <img
@@ -293,7 +294,46 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </section>
-<?php $__env->stopSection(); ?> <?php $__env->startPush('script'); ?>
+<?php $__env->stopSection(); ?> 
+<?php $__env->startPush('script'); ?>
+
+<script>
+    $(document).on("click", ".cart_increment", function(e){
+        e.preventDefault();
+
+        let rowId = $(this).data("id");
+
+        $.ajax({
+            url: "<?php echo e(route('cart.increment')); ?>",
+            type: "GET",
+            data: { rowId: rowId },
+            success: function(response){
+                $(".cartlist").html(response);
+            }
+        });
+    });
+
+</script>
+<script>
+    $(document).on("click", ".cart_decrement", function(e){
+        e.preventDefault();
+
+        let rowId = $(this).data("id");
+
+        $.ajax({
+            url: "<?php echo e(route('cart.decrement')); ?>",
+            type: "GET",
+            data: { rowId: rowId },
+            success: function(response){
+                $(".cartlist").html(response);
+            }
+        });
+    });
+    $(document).on("click", ".cart_remove", function(){
+        alert("clicked");
+    });
+
+</script>
 <script src="<?php echo e(asset('public/frontEnd/')); ?>/js/parsley.min.js"></script>
 <script src="<?php echo e(asset('public/frontEnd/')); ?>/js/form-validation.init.js"></script>
 <script src="<?php echo e(asset('public/frontEnd/')); ?>/js/select2.min.js"></script>

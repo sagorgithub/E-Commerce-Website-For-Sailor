@@ -81,124 +81,31 @@
                                         <div
                                                 class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-2 shop-sidebar-parent display-none">
                                                 <div class="sidebar-main">
+
                                                         <div class="sidebar-accordion-main">
                                                                 <div class="accordion" id="myAccordion">
                                                                         <div class="accordion-item">
-                                                                                <h2 class="accordion-header" id="headingOne">
-                                                                                        <button type="button"
-                                                                                                class="accordion-button "
+                                                                                <h2 class="accordion-header">
+                                                                                        <button class="accordion-button"
+                                                                                                type="button"
                                                                                                 data-bs-toggle="collapse"
-                                                                                                data-bs-target="#collapseOne">Category</button>
+                                                                                                data-bs-target="#collapseOne"
+                                                                                                aria-expanded="true"
+                                                                                                aria-controls="collapseOne">
+                                                                                                Category
+                                                                                        </button>
                                                                                 </h2>
                                                                                 <div id="collapseOne"
-                                                                                        class="accordion-collapse show"
-                                                                                        data-bs-parent="#myAccordion">
+                                                                                        class="accordion-collapse collapse show"
+                                                                                        data-bs-parent="#accordionExample">
                                                                                         <div class="accordion-body">
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="1174"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">Clearance
-                                                                                                                Sale
-                                                                                                                2025</label>
+                                                                                                <?php $__currentLoopData = $menucategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $scategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                                                <div class="form-check">
+                                                                                                        <input class="form-check-input" type="checkbox" id="<?php echo e($scategory->name); ?>" name="cat_id"
+                                                                                                                value="1174">
+                                                                                                                <label class="form-check-label" for="<?php echo e($scategory->name); ?>"><?php echo e($scategory->name); ?></label>
                                                                                                 </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="1165"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">Latest
-                                                                                                                Collection/25</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="1187"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">Sale
-                                                                                                                Offer</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="1181"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">Winter/25</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="8"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">MEN</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="9"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">WOMEN</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="225"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">KID'S</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="136"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">NEWBORN</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="100"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">FOOTWEAR</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="12"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">ACCESSORIES</label>
-                                                                                                </div>
-                                                                                                <div class="form-check"><input
-                                                                                                                class="form-check-input"
-                                                                                                                type="checkbox"
-                                                                                                                id="flexCheckDefault"
-                                                                                                                name="cat_id"
-                                                                                                                value="829"><label
-                                                                                                                class="form-check-label"
-                                                                                                                for="flexCheckDefault">FESTIVE
-                                                                                                                SPOT
-                                                                                                                LIGHT</label>
-                                                                                                </div>
+                                                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                                         </div>
                                                                                 </div>
                                                                         </div>

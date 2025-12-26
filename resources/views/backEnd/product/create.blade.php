@@ -253,11 +253,36 @@
 
             <div class="col-sm-6">
               <div class="form-group mb-3">
+                <label class="form-label">Size (Option)</label>
+                <div>
+                    @foreach($sizes as $size)
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="proSize[]" 
+                                value="{{ $size->id }}"
+                                id="size{{ $size->id }}"
+                            >
+                            <label class="form-check-label" for="size{{ $size->id }}">
+                                {{ $size->sizeName }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                @error('proSize')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
+
+              <div class="form-group mb-3 d-none">
                 <label for="roles" class="form-label">Size (Option)</label>
+                
                 <select class="form-control select2" name="proSize[]" multiple="multiple">
                   <option value="">Select</option>
                   @foreach($sizes as $size)
-                  <option value="{{$size->id}}">{{$size->sizeName}}</option>
+                    <option value="{{$size->id}}">{{$size->sizeName}}</option>
                   @endforeach
                 </select>
                 @error('sizes')
@@ -266,6 +291,20 @@
                 </span>
                 @enderror
               </div>
+
+              <script>
+                $(document).ready(function () {
+                    $('.select2').select2({
+                        placeholder: "Select Size",
+                        allowClear: true
+                    });
+                });
+
+              </script>
+              <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
             </div>
              <!--col end -->
             <div class="col-sm-6">

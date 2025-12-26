@@ -252,18 +252,16 @@
                                     <div class="size-lists m-0">
                                         <h5>size</h5>
                                         <ul class="nav">
+                                            <?php $__currentLoopData = $productsizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prosize): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <li class="nav-item ">
                                                 <a class=" nav-link" href="javascript:void(0)">
-                                                    
-                                                    <?php $__currentLoopData = $productsizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prosize): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <div class="selector-item">
-                                                            <input type="radio"
-                                                                name="product_size"
-                                                                value="<?php echo e($prosize->size->sizeName); ?>"
-                                                                required>
-                                                            <label><?php echo e($prosize->size->sizeName); ?></label>
-                                                        </div>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    <div class="selector-item">
+                                                        <input type="radio"
+                                                            name="product_size"
+                                                            value="<?php echo e($prosize->size->sizeName); ?>"
+                                                            required>
+                                                        <label><?php echo e($prosize->size->sizeName); ?></label>
+                                                    </div>
                                                 </a>
                                                 <div class="custom-tooltips">
                                                     <h5>product measurement</h5>
@@ -277,7 +275,7 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </ul>
                                     </div>
                                     <div class="size-chart-btn d-none">
@@ -286,6 +284,39 @@
                                             <i class="fa-solid fa-ruler-horizontal"></i>
                                             size guid</a>
                                     </div>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            const navLinks = document.querySelectorAll('.nav-link');
+
+                                            navLinks.forEach(link => {
+                                                link.addEventListener('click', function () {
+
+                                                    // সব active remove
+                                                    navLinks.forEach(l => l.classList.remove('active'));
+
+                                                    // current active
+                                                    this.classList.add('active');
+
+                                                    // radio auto checked
+                                                    const radio = this.querySelector('input[type="radio"]');
+                                                    if (radio) {
+                                                        radio.checked = true;
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
+
+                                    <style>
+                                        ul.nav li.nav-item a.nav-link.active {
+                                            background: #4d4d4d;
+                                            color: #fff;
+                                        }
+                                        .selector-item input[type="radio"] {
+                                            display: none;
+                                        }
+                                    </style>
+
                                     
                                     <div class="add-bag-flex">
                                         <div class="add-bag">
@@ -327,12 +358,16 @@
                                 <div class="detaiils-description">
                                     <div class="accordion" id="myAccordion">
                                         <div class="accordion-item">
-                                            <h2 class="accordion-header" id="headingOne"><button type="button"
-                                                    class="accordion-button collapsed" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne">details</button></h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse"
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne">details</button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse"
                                                 data-bs-parent="#myAccordion">
-                                                <div class="accordion-body"></div>
+                                                <div class="accordion-body">
+                                                    <?php echo e($details->description); ?>
+
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="accordion-item">
@@ -655,7 +690,7 @@
         });
 
         
-                    location.reload();
+                    // location.reload();
     }
     </script>
 

@@ -175,8 +175,9 @@
                                    
                                         <tr>
                                             <td>
-                                                <a class="cart_remove" data-id="{{ $value->rowId }}"><i
-                                                        class="fas fa-trash text-danger"></i></a>
+                                                <a class="cart_remove" data-id="{{ $value->rowId }}">
+                                                    <i class="fas fa-trash text-danger"></i>
+                                                </a>
                                             </td>
                                             <td class="text-left">
                                                 <a href="{{ route('product', $value->options->slug) }}"> <img
@@ -237,7 +238,46 @@
         </div>
     </div>
 </section>
-@endsection @push('script')
+@endsection 
+@push('script')
+
+<script>
+    $(document).on("click", ".cart_increment", function(e){
+        e.preventDefault();
+
+        let rowId = $(this).data("id");
+
+        $.ajax({
+            url: "{{ route('cart.increment') }}",
+            type: "GET",
+            data: { rowId: rowId },
+            success: function(response){
+                $(".cartlist").html(response);
+            }
+        });
+    });
+
+</script>
+<script>
+    $(document).on("click", ".cart_decrement", function(e){
+        e.preventDefault();
+
+        let rowId = $(this).data("id");
+
+        $.ajax({
+            url: "{{ route('cart.decrement') }}",
+            type: "GET",
+            data: { rowId: rowId },
+            success: function(response){
+                $(".cartlist").html(response);
+            }
+        });
+    });
+    $(document).on("click", ".cart_remove", function(){
+        alert("clicked");
+    });
+
+</script>
 <script src="{{ asset('public/frontEnd/') }}/js/parsley.min.js"></script>
 <script src="{{ asset('public/frontEnd/') }}/js/form-validation.init.js"></script>
 <script src="{{ asset('public/frontEnd/') }}/js/select2.min.js"></script>

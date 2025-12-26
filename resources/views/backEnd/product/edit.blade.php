@@ -283,6 +283,30 @@
 
             <div class="col-sm-6">
               <div class="form-group mb-3">
+                <label class="form-label">Size</label>
+                <div>
+                    @foreach($totalsizes as $size)
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="proSize[]" 
+                                value="{{ $size->id }}"
+                                id="size{{ $size->id }}"
+                                {{ in_array($size->id, $selectsizes->pluck('size_id')->toArray()) ? 'checked' : '' }}
+                            >
+                            <label class="form-check-label" for="size{{ $size->id }}">
+                                {{ $size->sizeName }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
+                @error('proSize')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
+              <div class="form-group mb-3 d-none">
                 <label for="roles" class="form-label">Size (Optional)</label>
                 <select class="form-control select2" name="proSize[]" multiple="multiple">
                   <option value="">Select</option>

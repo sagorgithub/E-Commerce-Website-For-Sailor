@@ -43,6 +43,158 @@
             }
         }
     </style>
+    <link rel="shortcut icon" href="{{asset($generalsetting->favicon)}}" alt="Super Ecommerce Favicon" />
+    <meta name="author" content="Super Ecommerce" />
+    <link rel="canonical" href="" />
+    @stack('seo')
+    @stack('css')
+    <link rel="stylesheet" href="{{asset('frontEnd/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('frontEnd/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('frontEnd/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/mobile-menu.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/select2.min.css')}}" />
+    <!-- toastr css -->
+    <link rel="stylesheet" href="{{asset('/backEnd/assets/css/toastr.min.css')}}" />
+
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/wsit-menu.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/responsive.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/main.css')}}" />
+    <link rel="stylesheet" href="{{asset('/frontEnd/css/modern-product-design.css')}}" />
+    <link rel="stylesheet" href="{{asset('frontEnd/css/zombie-style.css')}}" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <meta name="facebook-domain-verification" content="38f1w8335btoklo88dyfl63ba3st2e" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .carousel-control-next, .carousel-control-prev {
+            width: 5%;
+            .slider-btn{
+                background: var(--gradient-primary);
+                color: white !important;
+                font-size: 1.5rem;
+                padding: 10px;
+                border-radius: 10px;
+            }
+        }
+
+        .btn-primary{
+            background-color: var(--primary-color) !important;
+            background: var(--gradient-primary) !important;
+            color: var(--white) !important;
+            border-color: var(--primary-color);
+        }
+        /* --- Product Card Styles --- */
+        .beauty-product-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .beauty-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(229, 46, 138, 0.3) !important;
+        }
+        .beauty-product-card .beauty-quick-view {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .beauty-product-card:hover .beauty-quick-view {
+            opacity: 1;
+        }
+        .beauty-btn-sm-text {
+            font-size: 0.85rem;
+        }
+        .btn-outline-primary {
+            --bs-btn-color: var(--primary-color);
+            --bs-btn-border-color: var(--primary-color);
+            --bs-btn-hover-bg: var(--primary-color);
+            --bs-btn-hover-border-color: var(--primary-color);
+        }
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        .price-text{
+            color: var(--price-color) !important;
+        }
+        .bg-primary{
+            background-color: var(--primary-color) !important;
+        }
+        
+        /* --- Customer Sidebar Styles --- */
+        .beauty-sidebar-menu .list-group-item {
+            border-radius: 0.5rem;
+            margin-bottom: 5px;
+            border: 1px solid transparent;
+            font-weight: 500;
+        }
+        .beauty-sidebar-menu .list-group-item.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+        }
+        .beauty-sidebar-menu .list-group-item:not(.active):hover {
+            background-color: #f8f0f5;
+            color: var(--primary-color);
+        }
+        .beauty-sidebar-menu .list-group-item i {
+            font-size: 1.1rem;
+            vertical-align: middle;
+        }
+    </style>
+
+    @foreach($pixels as $pixel)
+        <!-- Facebook Pixel Code -->
+        <script>
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+            fbq("init", "{{{$pixel->code}}}");
+            fbq("track", "PageView");
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display: none;"
+                src="https://www.facebook.com/tr?id={{{$pixel->code}}}&ev=PageView&noscript=1" />
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+    @endforeach
+
+
+    @foreach($gtm_code as $gtm)
+        <!-- Google tag (gtag.js) -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-{{ $gtm->code }}');
+        </script>
+        <!-- End Google Tag Manager -->
+    @endforeach
 
 
     <link rel="stylesheet" href="{{asset('/frontEnd/css/style_tow.css')}}" />
@@ -181,7 +333,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item position-relative">
-                                    <a class="nav-link" href="/login">
+                                    <a class="nav-link" href="{{route('customer.cart')}}">
                                         <i class="icofont-cart"></i>
                                         <sup class="badge badge-pill">
                                             <span class="text-d2">
@@ -216,7 +368,7 @@
                                                                 <h3>Variant: {{ $value->options->product_size }}</h3>
                                                             </div>
                                                             <div class="remove-product w-100">
-                                                                <a href="#" class="remove-item">
+                                                                <a href="#" data-id="{{ $value->rowId }}" class="remove-item cart_remove">
                                                                     <i class="fa-regular fa-trash-can"></i>
                                                                 </a>
                                                             </div>
@@ -226,6 +378,24 @@
                                             </div>
                                             @endforeach
                                         </div>
+                                        <script>
+                                            $(document).on("click", ".cart_remove", function(e){
+                                                e.preventDefault();
+
+                                                let rowId = $(this).data("id");
+
+                                                $.ajax({
+                                                    url: "{{ route('cart.remove') }}",
+                                                    type: "GET",
+                                                    data: { rowId: rowId },
+                                                    success: function(response){
+                                                        $(".cartlist").html(response);
+                                                    }
+                                                });
+                                                location.reload();
+                                            });
+
+                                        </script>
                                         <div class="amount-box">
                                             <h3 class="text-start"> subtotal </h3>
                                             <h3 class="text-end">৳ {{$subtotal}} </h3>
@@ -1846,10 +2016,33 @@
         </div>
     </div>
 
+
+
+    <script>
+        $(document).on("click", ".cart_remove", function(e){
+            e.preventDefault();
+
+            let rowId = $(this).data("id");
+
+            $.ajax({
+                url: "{{ route('cart.remove') }}",
+                type: "GET",
+                data: { rowId: rowId },
+                success: function(response){
+                    $(".cartlist").html(response);
+                }
+            });
+            location.reload();-
+        });
+    </script>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="/assets/js/script.js" defer=""></script>
+    {{-- <script src="/assets/js/script.js" defer=""></script> --}}
 
     <script src="{{asset('/frontEnd/js/script.js')}}"></script>
 
@@ -1858,6 +2051,466 @@
     <script src="{{ asset('frontEnd/js/slick.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    
+
+    <script src="{{asset('/frontEnd/js/jquery-3.6.3.min.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/mobile-menu.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/wsit-menu.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/mobile-menu-init.js')}}"></script>
+    <script src="{{asset('/frontEnd/js/wow.min.js')}}"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- feather icon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script src="{{asset('/backEnd/assets/js/toastr.min.js')}}"></script>
+    {!! Toastr::message() !!} @stack('script')
+    <script>
+        $(".quick_view").on("click", function () {
+            var id = $(this).data("id");
+            $("#loading").show();
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        id: id
+                    },
+                    url: "{{route('quickview')}}",
+                    success: function (data) {
+                        if (data) {
+                            $("#custom-modal").html(data);
+                            $("#custom-modal").show();
+                            $("#loading").hide();
+                            $("#page-overlay").show();
+                        }
+                    },
+                });
+            }
+        });
+    </script>
+    <!-- quick view end -->
+    <!-- cart js start -->
+    <script>
+        $(".addcartbutton").on("click", function () {
+            var id = $(this).data("id");
+            var qty = 1;
+            if (id) {
+                $.ajax({
+                    cache: "false",
+                    type: "GET",
+                    url: "{{url('add-to-cart')}}/" + id + "/" + qty,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data) {
+                            toastr.success('Success', 'Product add to cart successfully');
+                            return cart_count() + mobile_cart();
+                        }
+                    },
+                });
+            }
+        });
+        $(".cart_store").on("click", function () {
+            var id = $(this).data("id");
+            var qty = $(this).parent().find("input").val();
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        id: id,
+                        qty: qty ? qty : 1
+                    },
+                    url: "{{route('cart.store')}}",
+                    success: function (data) {
+                        if (data) {
+                            toastr.success('Success', 'Product add to cart succfully');
+                            return cart_count() + mobile_cart();
+                        }
+                    },
+                });
+            }
+        });
+
+        $(".cart_remove").on("click", function () {
+            var id = $(this).data("id");
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        id: id
+                    },
+                    url: "{{route('cart.remove')}}",
+                    success: function (data) {
+                        if (data) {
+                            $(".cartlist").html(data);
+                            return cart_count() + mobile_cart() + cart_summary();
+                        }
+                    },
+                });
+            }
+        });
+
+        $(".cart_increment").on("click", function () {
+            var id = $(this).data("id");
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        id: id
+                    },
+                    url: "{{route('cart.increment')}}",
+                    success: function (data) {
+                        if (data) {
+                            $(".cartlist").html(data);
+                            return cart_count() + mobile_cart();
+                        }
+                    },
+                });
+            }
+        });
+
+        $(".cart_decrement").on("click", function () {
+            var id = $(this).data("id");
+            if (id) {
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        id: id
+                    },
+                    url: "{{route('cart.decrement')}}",
+                    success: function (data) {
+                        if (data) {
+                            $(".cartlist").html(data);
+                            return cart_count() + mobile_cart();
+                        }
+                    },
+                });
+            }
+        });
+
+        function cart_count() {
+            $.ajax({
+                type: "GET",
+                url: "{{route('cart.count')}}",
+                success: function (data) {
+                    if (data) {
+                        $("#cart-qty").html(data);
+                    } else {
+                        $("#cart-qty").empty();
+                    }
+                },
+            });
+        }
+
+        function mobile_cart() {
+            $.ajax({
+                type: "GET",
+                url: "{{route('mobile.cart.count')}}",
+                success: function (data) {
+                    if (data) {
+                        $(".mobilecart-qty").html(data);
+                    } else {
+                        $(".mobilecart-qty").empty();
+                    }
+                },
+            });
+        }
+
+        function cart_summary() {
+            $.ajax({
+                type: "GET",
+                url: "{{route('shipping.charge')}}",
+                dataType: "html",
+                success: function (response) {
+                    $(".cart-summary").html(response);
+                },
+            });
+        }
+    </script>
+    <!-- cart js end -->
+    <script>
+        $(".search_click").on("keyup change", function () {
+            var keyword = $(".search_keyword").val();
+            $.ajax({
+                type: "GET",
+                data: {
+                    keyword: keyword
+                },
+                url: "{{route('livesearch')}}",
+                success: function (products) {
+                    if (products) {
+                        $(".search_result").html(products);
+                    } else {
+                        $(".search_result").empty();
+                    }
+                },
+            });
+        });
+        $(".msearch_click").on("keyup change", function () {
+            var keyword = $(".msearch_keyword").val();
+            $.ajax({
+                type: "GET",
+                data: {
+                    keyword: keyword
+                },
+                url: "{{route('livesearch')}}",
+                success: function (products) {
+                    if (products) {
+                        $("#loading").hide();
+                        $(".search_result").html(products);
+                    } else {
+                        $(".search_result").empty();
+                    }
+                },
+            });
+        });
+    </script>
+    <!-- search js start -->
+    <script></script>
+    <script></script>
+    <script>
+        $(".district").on("change", function () {
+            var id = $(this).val();
+            $.ajax({
+                type: "GET",
+                data: {
+                    id: id
+                },
+                url: "{{route('districts')}}",
+                success: function (res) {
+                    if (res) {
+                        $(".area").empty();
+                        $(".area").append('<option value="">Select..</option>');
+                        $.each(res, function (key, value) {
+                            $(".area").append('<option value="' + key + '" >' + value + "</option>");
+                        });
+                    } else {
+                        $(".area").empty();
+                    }
+                },
+            });
+        });
+    </script>
+    <script>
+        $(".toggle").on("click", function () {
+            $("#page-overlay").show();
+            $(".mobile-menu").addClass("active");
+        });
+
+        $("#page-overlay").on("click", function () {
+            $("#page-overlay").hide();
+            $(".mobile-menu").removeClass("active");
+            $(".feature-products").removeClass("active");
+        });
+
+        $(".mobile-menu-close").on("click", function () {
+            $("#page-overlay").hide();
+            $(".mobile-menu").removeClass("active");
+        });
+
+        $(".mobile-filter-toggle").on("click", function () {
+            $("#page-overlay").show();
+            $(".feature-products").addClass("active");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".parent-category").each(function () {
+                const menuCatToggle = $(this).find(".menu-category-toggle");
+                const secondNav = $(this).find(".second-nav");
+
+                menuCatToggle.on("click", function () {
+                    menuCatToggle.toggleClass("active");
+                    secondNav.slideToggle("fast");
+                    $(this).closest(".parent-category").toggleClass("active");
+                });
+            });
+            $(".parent-subcategory").each(function () {
+                const menuSubcatToggle = $(this).find(".menu-subcategory-toggle");
+                const thirdNav = $(this).find(".third-nav");
+
+                menuSubcatToggle.on("click", function () {
+                    menuSubcatToggle.toggleClass("active");
+                    thirdNav.slideToggle("fast");
+                    $(this).closest(".parent-subcategory").toggleClass("active");
+                });
+            });
+        });
+    </script>
+
+    <script>
+        var menu = new MmenuLight(document.querySelector("#menu"), "all");
+
+        var navigator = menu.navigation({
+            selectedClass: "Selected",
+            slidingSubmenus: true,
+            // theme: 'dark',
+            title: "ক্যাটাগরি",
+        });
+
+        var drawer = menu.offcanvas({
+            // position: 'left'
+        });
+
+        //  Open the menu.
+        document.querySelector('a[href="#menu"]').addEventListener("click", (evnt) => {
+            evnt.preventDefault();
+            drawer.open();
+        });
+    </script>
+
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     window.addEventListener("scroll", function () {
+        //         if (window.scrollY > 200) {
+        //             document.getElementById("navbar_top").classList.add("fixed-top");
+        //         } else {
+        //             document.getElementById("navbar_top").classList.remove("fixed-top");
+        //             document.body.style.paddingTop = "0";
+        //         }
+        //     });
+        // });
+        /*=== Main Menu Fixed === */
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     window.addEventListener("scroll", function () {
+        //         if (window.scrollY > 0) {
+        //             document.getElementById("m_navbar_top").classList.add("fixed-top");
+        //             // add padding top to show content behind navbar
+        //             navbar_height = document.querySelector(".navbar").offsetHeight;
+        //             document.body.style.paddingTop = navbar_height + "px";
+        //         } else {
+        //             document.getElementById("m_navbar_top").classList.remove("fixed-top");
+        //             // remove padding top from body
+        //             document.body.style.paddingTop = "0";
+        //         }
+        //     });
+        // });
+        /*=== Main Menu Fixed === */
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $(".scrolltop:hidden").stop(true, true).fadeIn();
+            } else {
+                $(".scrolltop").stop(true, true).fadeOut();
+            }
+        });
+        $(function () {
+            $(".scroll").click(function () {
+                $("html,body").animate({
+                    scrollTop: $(".gotop").offset().top
+                }, "1000");
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(".filter_btn").click(function () {
+            $(".filter_sidebar").addClass('active');
+            $("body").css("overflow-y", "hidden");
+        })
+        $(".filter_close").click(function () {
+            $(".filter_sidebar").removeClass('active');
+            $("body").css("overflow-y", "auto");
+        })
+    </script>
+
+    <!-- Submenu JavaScript -->
+    <script>
+        $(document).ready(function () {
+            // Show submenu on hover
+            $('.modern-nav-dropdown').hover(
+                function () {
+                    $(this).find('.modern-submenu').fadeIn(200);
+                },
+                function () {
+                    $(this).find('.modern-submenu').fadeOut(200);
+                }
+            );
+
+            // Show child menu on hover
+            $('.modern-submenu-item').hover(
+                function () {
+                    $(this).find('.modern-childmenu').fadeIn(200);
+                },
+                function () {
+                    $(this).find('.modern-childmenu').fadeOut(200);
+                }
+            );
+
+            // Add hover effects to menu items
+            $('.modern-submenu-link, .modern-childmenu-link').hover(
+                function () {
+                    $(this).css('background-color', '#f4c430');
+                    $(this).css('color', '#2c2c2c');
+                },
+                function () {
+                    $(this).css('background-color', 'transparent');
+                    $(this).css('color', 'white');
+                }
+            );
+
+            // Add hover effects to header icons
+            // $('.modern-user-actions').hover(
+            //     function () {
+            //         $(this).css('transform', 'translateY(-2px)');
+            //         $(this).css('color', '#d4a574');
+            //         $(this).find('i').css('color', '#c19660');
+            //     },
+            //     function () {
+            //         $(this).css('transform', 'translateY(0)');
+            //         $(this).css('color', '#333');
+            //         $(this).find('i').css('color', '#d4a574');
+            //     }
+            // );
+        });
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K29C9BKJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Facebook Tracking JavaScript -->
+    @if($generalsetting->facebook_pixel_id && $generalsetting->facebook_server_side_tracking)
+        <script src="{{ asset('assets/js/facebook-tracking.js') }}"></script>
+    @endif
+
+    <!-- Meta Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '882050187180701');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=882050187180701&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Modern Product Interactions -->
+    <script src="{{ asset('/frontEnd/js/modern-product-interactions.js') }}"></script>
 </body>
 
 </html>

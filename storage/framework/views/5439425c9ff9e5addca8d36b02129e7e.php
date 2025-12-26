@@ -423,11 +423,44 @@ unset($__errorArgs, $__bag); ?>
 
             <div class="col-sm-6">
               <div class="form-group mb-3">
+                <label class="form-label">Size (Option)</label>
+                <div>
+                    <?php $__currentLoopData = $sizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $size): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="form-check form-check-inline">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="proSize[]" 
+                                value="<?php echo e($size->id); ?>"
+                                id="size<?php echo e($size->id); ?>"
+                            >
+                            <label class="form-check-label" for="size<?php echo e($size->id); ?>">
+                                <?php echo e($size->sizeName); ?>
+
+                            </label>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+
+                <?php $__errorArgs = ['proSize'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                    <span class="text-danger"><?php echo e($message); ?></span>
+                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+              </div>
+
+              <div class="form-group mb-3 d-none">
                 <label for="roles" class="form-label">Size (Option)</label>
+                
                 <select class="form-control select2" name="proSize[]" multiple="multiple">
                   <option value="">Select</option>
                   <?php $__currentLoopData = $sizes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $size): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                  <option value="<?php echo e($size->id); ?>"><?php echo e($size->sizeName); ?></option>
+                    <option value="<?php echo e($size->id); ?>"><?php echo e($size->sizeName); ?></option>
                   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
                 <?php $__errorArgs = ['sizes'];
@@ -443,6 +476,20 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
               </div>
+
+              <script>
+                $(document).ready(function () {
+                    $('.select2').select2({
+                        placeholder: "Select Size",
+                        allowClear: true
+                    });
+                });
+
+              </script>
+              <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
             </div>
              <!--col end -->
             <div class="col-sm-6">

@@ -4552,7 +4552,7 @@ ul.social_link {
 }
 
 .selector-item label {
-    border: 1px solid #7D7D7D;
+    /* border: 1px solid #7D7D7D; */
 }
 
 .color_inner .selector-item label span img {
