@@ -376,6 +376,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'lock', 'check_re
 
     // campaign
     Route::get('campaign/manage', [CampaignController::class, 'index'])->name('campaign.index');
+    Route::get('campaign/video', [CampaignController::class, 'video'])->name('campaign.video');
     Route::get('campaign/{id}/show', [CampaignController::class, 'show'])->name('campaign.show');
     Route::get('campaign/create', [CampaignController::class, 'create'])->name('campaign.create');
     Route::post('campaign/save', [CampaignController::class, 'store'])->name('campaign.store');

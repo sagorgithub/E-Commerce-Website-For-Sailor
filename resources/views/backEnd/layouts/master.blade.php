@@ -363,6 +363,9 @@
                     <li>
                       <a href="{{route('campaign.index')}}"><i data-feather="file-plus"></i> Campaign</a>
                     </li>
+                    <li>
+                      <a href="{{route('campaign.video')}}"><i data-feather="file-plus"></i> Video</a>
+                    </li>
                   </ul>
                 </div>
               </li>

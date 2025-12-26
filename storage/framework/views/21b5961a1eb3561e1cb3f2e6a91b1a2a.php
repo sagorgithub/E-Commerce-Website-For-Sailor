@@ -363,6 +363,9 @@
                     <li>
                       <a href="<?php echo e(route('campaign.index')); ?>"><i data-feather="file-plus"></i> Campaign</a>
                     </li>
+                    <li>
+                      <a href="<?php echo e(route('campaign.video')); ?>"><i data-feather="file-plus"></i> Video</a>
+                    </li>
                   </ul>
                 </div>
               </li>

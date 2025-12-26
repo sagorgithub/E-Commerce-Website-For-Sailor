@@ -372,4 +372,11 @@ class CampaignController extends Controller
         Toastr::success('Success','Data delete successfully');
         return redirect()->back();
     } 
+
+
+    //sagor vai
+    public function video() {
+        
+        return view('backEnd.campaign.video');
+    }
 }

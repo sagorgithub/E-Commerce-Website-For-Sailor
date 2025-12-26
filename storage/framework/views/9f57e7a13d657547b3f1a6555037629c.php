@@ -11,20 +11,38 @@
             <div class="main-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a target="_self" href="#">
-                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
+                        
+
+                        
+
+                        <a target="_self" href="">
+                            
+                            <video
+                                id="myVideo"
+                                class="w-full h-screen object-cover"
+                                autoplay
+                                loop
+                                muted
+                                playsinline>
+                                <source src="https://prod.saralifestyle.com/Images/Content/30b406d0fa2d44b3bad763f3f2e22fd8.mp4" type="video/mp4">
+                            </video>
+
+                            <button onclick="openFullscreen()">Fullscreen</button>
+
+                            <script>
+                            function openFullscreen() {
+                            const video = document.getElementById("myVideo");
+                            if (video.requestFullscreen) {
+                                video.requestFullscreen();
+                            } else if (video.webkitRequestFullscreen) {
+                                video.webkitRequestFullscreen();
+                            }
+                            }
+                            </script>
+
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a target="_self" href="#">
-                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a target="_self" href="#">
-                            <img alt="" class="img-fluid" src="<?php echo e(asset('/frontEnd/images/slider.jpg')); ?>">
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </section>

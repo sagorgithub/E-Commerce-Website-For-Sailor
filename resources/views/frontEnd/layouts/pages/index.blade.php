@@ -11,6 +11,38 @@
             <div class="main-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        {{-- <video class="w-full h-100" src="https://prod.saralifestyle.com/Images/Content/343cd17391ec4e6d89c2a08bd423a622.mp4" autoplay="" loop="" playsinline="" preload="metadata" loading="lazy" aria-label="Exclusive Collection Video"></video> --}}
+
+                        {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/BJaToeEUueQ?si=SSZFsnZgBb6s9tgG&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> --}}
+
+                        <a target="_self" href="">
+                            {{-- <img alt="" class="img-fluid" src="{{ asset('/frontEnd/images/slider.jpg') }}"> --}}
+                            <video
+                                id="myVideo"
+                                class="w-full h-screen object-cover"
+                                autoplay
+                                loop
+                                muted
+                                playsinline>
+                                <source src="https://prod.saralifestyle.com/Images/Content/30b406d0fa2d44b3bad763f3f2e22fd8.mp4" type="video/mp4">
+                            </video>
+
+                            <button onclick="openFullscreen()">Fullscreen</button>
+
+                            <script>
+                            function openFullscreen() {
+                            const video = document.getElementById("myVideo");
+                            if (video.requestFullscreen) {
+                                video.requestFullscreen();
+                            } else if (video.webkitRequestFullscreen) {
+                                video.webkitRequestFullscreen();
+                            }
+                            }
+                            </script>
+
+                        </a>
+                    </div>
+                    {{-- <div class="swiper-slide">
                         <a target="_self" href="#">
                             <img alt="" class="img-fluid" src="{{ asset('/frontEnd/images/slider.jpg') }}">
                         </a>
@@ -19,12 +51,7 @@
                         <a target="_self" href="#">
                             <img alt="" class="img-fluid" src="{{ asset('/frontEnd/images/slider.jpg') }}">
                         </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a target="_self" href="#">
-                            <img alt="" class="img-fluid" src="{{ asset('/frontEnd/images/slider.jpg') }}">
-                        </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Color;
+use App\Models\Size;
 use App\Models\SkinConcern;
 use App\Models\SkinType;
 use shurjopayv2\ShurjopayLaravelPackage8\Http\Controllers\ShurjopayController;
@@ -107,6 +109,8 @@ class FrontendController extends Controller
             $all_products = Product::where('status', 1)
                     ->select('id', 'name', 'slug', 'new_price', 'old_price')
                     ->get();
+        
+        // All Sizes
 
         // return $homeproducts;
         return view('frontEnd.layouts.pages.index', compact('sliders', 'frontcategory', 'hotdeal_top', 'hotdeal_bottom', 'homeproducts', 'sliderbottomads', 'footertopads', 'brands', 'skintypes', 'skinconcerns', 'all_products'));
@@ -178,8 +182,12 @@ class FrontendController extends Controller
             });
         });
 
+        
+        $all_sizes = Size::where('status', 1)->get(); //add sagor
+        $all_colors = Color::where('status', 1)->get(); //add sagor
+
         $products = $products->paginate(24);
-        return view('frontEnd.layouts.pages.category', compact('category', 'products', 'subcategories', 'min_price', 'max_price'));
+        return view('frontEnd.layouts.pages.category', compact('category', 'products', 'subcategories', 'min_price', 'max_price', 'all_sizes', 'all_colors'));
     }
 
     //ashik
