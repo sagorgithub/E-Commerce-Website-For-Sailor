@@ -27,6 +27,7 @@ use App\Models\OrderDetails;
 use App\Models\Payment;
 use App\Models\Order;
 use App\Models\Review;
+use App\Models\Video;
 use Session;
 use Cart;
 use Auth;
@@ -112,8 +113,13 @@ class FrontendController extends Controller
         
         // All Sizes
 
+        $videos = Video::where('status',1)
+    ->whereJsonContains('pages','home')
+    ->latest()
+    ->first();
+
         // return $homeproducts;
-        return view('frontEnd.layouts.pages.index', compact('sliders', 'frontcategory', 'hotdeal_top', 'hotdeal_bottom', 'homeproducts', 'sliderbottomads', 'footertopads', 'brands', 'skintypes', 'skinconcerns', 'all_products'));
+        return view('frontEnd.layouts.pages.index', compact('sliders', 'frontcategory', 'hotdeal_top', 'hotdeal_bottom', 'homeproducts', 'sliderbottomads', 'footertopads', 'brands', 'skintypes', 'skinconcerns', 'all_products', 'videos'));
     }
 
     public function campaigns()

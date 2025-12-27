@@ -7,6 +7,7 @@
 
 
     <main>
+        @if($videos)
         <section class="main-section">
             <div class="main-swiper">
                 <div class="swiper-wrapper">
@@ -15,6 +16,8 @@
 
                         {{-- <iframe width="560" height="315" src="https://www.youtube.com/embed/BJaToeEUueQ?si=SSZFsnZgBb6s9tgG&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> --}}
 
+                        {{-- {{ $videos = Video::whereJsonContains('pages', 'home')->get() }} --}}
+                        {{-- @foreach($videos as $video) --}}
                         <a target="_self" href="">
                             {{-- <img alt="" class="img-fluid" src="{{ asset('/frontEnd/images/slider.jpg') }}"> --}}
                             <video
@@ -24,10 +27,11 @@
                                 loop
                                 muted
                                 playsinline>
-                                <source src="https://prod.saralifestyle.com/Images/Content/30b406d0fa2d44b3bad763f3f2e22fd8.mp4" type="video/mp4">
+                                <source src="{{ asset('storage/'.$videos->video) }}" type="video/mp4">
+                                {{-- <source src="https://prod.saralifestyle.com/Images/Content/30b406d0fa2d44b3bad763f3f2e22fd8.mp4" type="video/mp4"> --}}
                             </video>
 
-                            <button onclick="openFullscreen()">Fullscreen</button>
+                            {{-- <button onclick="openFullscreen()">Fullscreen</button> --}}
 
                             <script>
                             function openFullscreen() {
@@ -41,6 +45,7 @@
                             </script>
 
                         </a>
+                        {{-- @endforeach --}}
                     </div>
                     {{-- <div class="swiper-slide">
                         <a target="_self" href="#">
@@ -55,9 +60,9 @@
                 </div>
             </div>
         </section>
+        @endif
 
-
-        <section class="ad-banner mb-0">
+        {{-- <section class="ad-banner mb-0">
             <div class="container-fluid px-0">
                 <div class="row g-0">
                     <div class="col-md-6 col-12">
@@ -72,7 +77,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <section class="trending-categories-main">
             <div class="container-fluid">

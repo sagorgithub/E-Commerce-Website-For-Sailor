@@ -212,8 +212,9 @@
                                 @endif
                                 <ul class="third-nav" style="display: none;">
                                     @foreach($subcategory->childcategories as $childcat)
-                                        <li class="childcategory"><a href="{{url('products/' . $childcat->slug)}}"
-                                                class="menu-childcategory-name">{{$childcat->childcategoryName}}</a></li>
+                                        <li class="childcategory">
+                                        <a href="{{url('products/' . $childcat->slug)}}" class="menu-childcategory-name">{{$childcat->childcategoryName}}</a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </li>

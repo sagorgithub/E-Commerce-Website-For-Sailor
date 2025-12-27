@@ -37,10 +37,26 @@ use App\Http\Controllers\Admin\TagManagerController;
 use App\Http\Controllers\Admin\FacebookTrackingController;
 use App\Http\Controllers\Admin\LandingPageController;
 use App\Http\Controllers\Admin\SkinTypeController;
+use App\Http\Controllers\VideoController;
 
 
 
 // -----------------Landing Page------------------
+
+
+// Route::get('/', [VideoController::class, 'index'])->name('videos.index');
+// Route::get('/upload', [VideoController::class, 'create'])->name('videos.create');
+// Route::post('/upload', [VideoController::class, 'store'])->name('videos.store');
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/landing-pages', [\App\Http\Controllers\Frontend\LandingPageController::class, 'index'])->name('landing.index');
@@ -86,7 +102,49 @@ Route::get('/controller', function () {
 
 Route::group(['namespace' => 'Frontend', 'middleware' => ['ipcheck', 'check_refer']], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('home');
-Route::get('/home', [FrontendController::class, 'campaigns'])->name('campaigns');
+
+    //sagor with change
+    Route::get('/campaign/videos/index', [VideoController::class, 'index'])
+        ->name('campaign.videos.index');
+
+    Route::post('/campaign/video/store', [VideoController::class, 'store'])
+        ->name('campaign.videos.store');
+
+        Route::patch('/campaign/videos/{id}/status', [VideoController::class, 'toggleStatus'])
+    ->name('campaign.videos.status');
+
+    Route::delete('/campaign/videos/{id}', [VideoController::class, 'destroy'])
+        ->name('campaign.videos.delete');
+
+
+    Route::patch('/campaign/videos/{id}/status-ajax',
+    [VideoController::class, 'ajaxStatus'])
+    ->name('campaign.videos.status.ajax');
+
+    Route::patch('/campaign/videos/{id}/pages-ajax',
+    [VideoController::class, 'ajaxPages'])
+    ->name('campaign.videos.pages.ajax');
+
+
+
+
+    // Route::get('campaign/video', [CampaignController::class, 'video'])->name('campaign.video');
+
+    // Route::get('/campaign/videos', [VideoController::class, 'index'])
+    //     ->name('campaign.video');
+
+    // Route::get('/campaign/video/index', [VideoController::class, 'create'])
+    //     ->name('campaign.video.index');
+
+    // Route::post('/campaign/videos/store', [VideoController::class, 'store'])
+    //     ->name('campaign.videos.store');
+
+    // Route::post('/campaign/videos/store', [VideoController::class, 'store'])->name('admin.videos.store');
+
+    // Route::get('campaign/video', [CampaignController::class, 'video'])->name('campaign.video');
+
+
+    Route::get('/home', [FrontendController::class, 'campaigns'])->name('campaigns');
     Route::get('category/{category}', [FrontendController::class, 'category'])->name('category');
 
 
@@ -376,7 +434,12 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth', 'lock', 'check_re
 
     // campaign
     Route::get('campaign/manage', [CampaignController::class, 'index'])->name('campaign.index');
-    Route::get('campaign/video', [CampaignController::class, 'video'])->name('campaign.video');
+
+
+
+
+
+
     Route::get('campaign/{id}/show', [CampaignController::class, 'show'])->name('campaign.show');
     Route::get('campaign/create', [CampaignController::class, 'create'])->name('campaign.create');
     Route::post('campaign/save', [CampaignController::class, 'store'])->name('campaign.store');

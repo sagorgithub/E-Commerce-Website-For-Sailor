@@ -94,7 +94,7 @@
 
             <li class="dropdown notification-list topbar-dropdown">
               <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="{{asset(Auth::user()->image)}}" alt="user-image" class="rounded-circle" />
+                <img src="{{asset(Auth::user()->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')}}" alt="user-image" class="rounded-circle" />
                 <span class="pro-user-name ms-1"> {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i> </span>
               </a>
               <div class="dropdown-menu dropdown-menu-end profile-dropdown">
@@ -364,7 +364,7 @@
                       <a href="{{route('campaign.index')}}"><i data-feather="file-plus"></i> Campaign</a>
                     </li>
                     <li>
-                      <a href="{{route('campaign.video')}}"><i data-feather="file-plus"></i> Video</a>
+                      <a href="{{route('campaign.videos.index')}}"><i data-feather="file-plus"></i> Video</a>
                     </li>
                   </ul>
                 </div>

@@ -375,8 +375,8 @@ class CampaignController extends Controller
 
 
     //sagor vai
-    public function video() {
+    // public function video() {
         
-        return view('backEnd.campaign.video');
-    }
+    //     return view('backEnd.campaign.video');
+    // }
 }

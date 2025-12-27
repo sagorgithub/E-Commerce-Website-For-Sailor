@@ -71,9 +71,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .carousel-control-next, .carousel-control-prev {
+        .carousel-control-next,
+        .carousel-control-prev {
             width: 5%;
-            .slider-btn{
+
+            .slider-btn {
                 background: var(--gradient-primary);
                 color: white !important;
                 font-size: 1.5rem;
@@ -82,47 +84,55 @@
             }
         }
 
-        .btn-primary{
+        .btn-primary {
             background-color: var(--primary-color) !important;
             background: var(--gradient-primary) !important;
             color: var(--white) !important;
             border-color: var(--primary-color);
         }
+
         /* --- Product Card Styles --- */
         .beauty-product-card {
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-        
+
         .beauty-product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(229, 46, 138, 0.3) !important;
         }
+
         .beauty-product-card .beauty-quick-view {
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .beauty-product-card:hover .beauty-quick-view {
             opacity: 1;
         }
+
         .beauty-btn-sm-text {
             font-size: 0.85rem;
         }
+
         .btn-outline-primary {
             --bs-btn-color: var(--primary-color);
             --bs-btn-border-color: var(--primary-color);
             --bs-btn-hover-bg: var(--primary-color);
             --bs-btn-hover-border-color: var(--primary-color);
         }
+
         .text-primary {
             color: var(--primary-color) !important;
         }
-        .price-text{
+
+        .price-text {
             color: var(--price-color) !important;
         }
-        .bg-primary{
+
+        .bg-primary {
             background-color: var(--primary-color) !important;
         }
-        
+
         /* --- Customer Sidebar Styles --- */
         .beauty-sidebar-menu .list-group-item {
             border-radius: 0.5rem;
@@ -130,15 +140,18 @@
             border: 1px solid transparent;
             font-weight: 500;
         }
+
         .beauty-sidebar-menu .list-group-item.active {
             background-color: var(--primary-color);
             border-color: var(--primary-color);
             color: var(--white);
         }
+
         .beauty-sidebar-menu .list-group-item:not(.active):hover {
             background-color: #f8f0f5;
             color: var(--primary-color);
         }
+
         .beauty-sidebar-menu .list-group-item i {
             font-size: 1.1rem;
             vertical-align: middle;
@@ -349,37 +362,40 @@
                                             <h6>Add Something to Cart</h6>
                                         </div> --}}
                                         <div class="shopping-scrol" data-simplebar="true">
-                                             @foreach (Cart::instance('shopping')->content() as $value)
-                                            <div class="card mb-3">
-                                                <div class="row g-0">
-                                                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                                        <img src="{{ asset($value->options->image) }}" class="img-fluid" alt="">
-                                                    </div>
-                                                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                                                        <div class="card-body">
-                                                            <div class="products-namebox">
-                                                                <h3 class="name">
-                                                                    <a href="{{ route('product', $value->options->slug) }}">{{ Str::limit($value->name, 20) }}</a>
-                                                                </h3>
-                                                                <h3 class="price">৳ {{ $value->price }} </h3>
-                                                            </div>
-                                                            <div class="price-description">
-                                                                <h3>Qty: {{ $value->qty }}</h3>
-                                                                <h3>Variant: {{ $value->options->product_size }}</h3>
-                                                            </div>
-                                                            <div class="remove-product w-100">
-                                                                <a href="#" data-id="{{ $value->rowId }}" class="remove-item cart_remove">
-                                                                    <i class="fa-regular fa-trash-can"></i>
-                                                                </a>
+                                            @foreach (Cart::instance('shopping')->content() as $value)
+                                                <div class="card mb-3">
+                                                    <div class="row g-0">
+                                                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                                            <img src="{{ asset($value->options->image) }}" class="img-fluid"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                                            <div class="card-body">
+                                                                <div class="products-namebox">
+                                                                    <h3 class="name">
+                                                                        <a
+                                                                            href="{{ route('product', $value->options->slug) }}">{{ Str::limit($value->name, 20) }}</a>
+                                                                    </h3>
+                                                                    <h3 class="price">৳ {{ $value->price }} </h3>
+                                                                </div>
+                                                                <div class="price-description">
+                                                                    <h3>Qty: {{ $value->qty }}</h3>
+                                                                    <h3>Variant: {{ $value->options->product_size }}</h3>
+                                                                </div>
+                                                                <div class="remove-product w-100">
+                                                                    <a href="#" data-id="{{ $value->rowId }}"
+                                                                        class="remove-item cart_remove">
+                                                                        <i class="fa-regular fa-trash-can"></i>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                             @endforeach
                                         </div>
                                         <script>
-                                            $(document).on("click", ".cart_remove", function(e){
+                                            $(document).on("click", ".cart_remove", function (e) {
                                                 e.preventDefault();
 
                                                 let rowId = $(this).data("id");
@@ -388,7 +404,7 @@
                                                     url: "{{ route('cart.remove') }}",
                                                     type: "GET",
                                                     data: { rowId: rowId },
-                                                    success: function(response){
+                                                    success: function (response) {
                                                         $(".cartlist").html(response);
                                                     }
                                                 });
@@ -401,8 +417,10 @@
                                             <h3 class="text-end">৳ {{$subtotal}} </h3>
                                         </div>
                                         <div class="button-sets">
-                                            <a class="btn btn-outline-primary view-shopping" href="{{route('customer.cart')}}">view shopping bag</a>
-                                            <a class="btn btn-secondary checkout" href="{{route('customer.checkout')}}">checkout</a>
+                                            <a class="btn btn-outline-primary view-shopping"
+                                                href="{{route('customer.cart')}}">view shopping bag</a>
+                                            <a class="btn btn-secondary checkout"
+                                                href="{{route('customer.checkout')}}">checkout</a>
                                         </div>
                                     </div>
                                 </li>
@@ -415,12 +433,16 @@
         <section class="final-nav">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container">
-                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
-                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" 
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"
+                        style="max-width: 70%"
+                        >
                         <ul class="navbar-nav show-lg">
+                            {{-- @foreach($menucategories as $scategory)
                             <li class="nav-item dropdown has-megamenu">
-                                <a class="nav-link dropdown-toggle " href="/category/clearance-sale-2025">Clearance Sale
-                                    2025
+                                <a class="nav-link dropdown-toggle "
+                                    href="{{url('category/' . $scategory->slug)}}">{{$scategory->name}}
+                                    @if($scategory->subcategories->count() > 0)
                                     <div class="dropdown-menu megamenu " role="menu">
                                         <div class="row g-3">
                                             <div class="col-xs-12 col-md-12 col-md-12 col-lg-12">
@@ -433,6 +455,8 @@
                                                             </a>
                                                         </div>
                                                     </div>
+
+                                                    @foreach($scategory->subcategories->take(4) as $subcategory)
                                                     <div class="gridbox-single">
                                                         <div class="col-megamenu">
                                                             <h6 class="title">
@@ -442,46 +466,8 @@
                                                             <ul class="list-unstyled"></ul>
                                                         </div>
                                                     </div>
-                                                    <div class="gridbox-single">
-                                                        <div class="col-megamenu">
-                                                            <h6 class="title">
-                                                                <a
-                                                                    href="/category/clearance-sale-2025-womens-collection">Womens
-                                                                    Collection</a>
-                                                            </h6>
-                                                            <ul class="list-unstyled"></ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gridbox-single">
-                                                        <div class="col-megamenu">
-                                                            <h6 class="title">
-                                                                <a href="/category/clearance-sale-2025-kids-collection">KIds
-                                                                    Collection</a>
-                                                            </h6>
-                                                            <ul class="list-unstyled">
-                                                                <li>
-                                                                    <a
-                                                                        href="/category/clearance-sale-2025-girls-collection">Girls
-                                                                        Collection</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a
-                                                                        href="/category/clearance-sale-2025-boys-collection">Boys
-                                                                        Collection</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gridbox-single">
-                                                        <div class="col-megamenu">
-                                                            <h6 class="title">
-                                                                <a
-                                                                    href="/category/clearance-sale-2025-newborn-collection">Newborn
-                                                                    Collection</a>
-                                                            </h6>
-                                                            <ul class="list-unstyled"></ul>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
+
                                                     <div class="gridbox-single">
                                                         <a href="#" class="">
                                                             <img src="{{ asset('/frontEnd/images/sailorbucket.jpg') }}"
@@ -498,18 +484,85 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </a>
                             </li>
+                            @endforeach --}}
 
                             @foreach($menucategories as $scategory)
                                 <li class="nav-item dropdown has-megamenu">
-                                    <a class="nav-link dropdown-toggle "
-                                        href="{{url('category/' . $scategory->slug)}}">{{$scategory->name}}
-                                        <div class="dropdown-menu megamenu " role="menu">
-                                        </div>
+                                    <a class="nav-link dropdown-toggle" href="{{ url('category/' . $scategory->slug) }}">
+                                        {{ $scategory->name }}
+                                        @if($scategory->subcategories->count() > 0)
+                                            <div class="dropdown-menu megamenu" role="menu">
+                                                <div class="row g-3">
+                                                    <div class="col-12">
+                                                        <div class="menugrid-main">
+
+                                                            {{-- Left Image --}}
+                                                            <div class="gridbox-single left-image-box">
+                                                                <a href="#">
+                                                                    <img src="{{ asset('/frontEnd/images/singapore.jpg') }}"
+                                                                        alt="" class="img-fluid">
+                                                                </a>
+                                                            </div>
+
+                                                            {{-- Subcategories --}}
+                                                            @php
+                                                                $subcategories = $scategory->subcategories;
+                                                                $maxColumns = 4;
+                                                            @endphp
+
+                                                            @foreach($subcategories->take($maxColumns) as $subcategory)
+                                                                <div class="gridbox-single">
+                                                                    <div class="col-megamenu">
+                                                                        <h6 class="title">
+                                                                            <a href="{{url('subcategory/' . $subcategory->slug)}}">
+                                                                                {{$subcategory->subcategoryName}}
+                                                                            </a>
+                                                                        </h6>
+                                                                        <ul class="list-unstyled">
+
+                                                                            @foreach($subcategory->childcategories as $childcat)
+                                                                                <li class="childcategory">
+                                                                                    <a href="{{url('products/' . $childcat->slug)}}"
+                                                                                        class="menu-childcategory-name">{{$childcat->childcategoryName}}</a>
+                                                                                </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+
+                                                            {{-- খালি column যদি কম থাকে --}}
+                                                            @for($i = $subcategories->count(); $i < $maxColumns; $i++)
+                                                                <div class="gridbox-single"></div>
+                                                            @endfor
+
+                                                            {{-- Right Images --}}
+                                                            <div class="gridbox-single">
+                                                                <a href="#">
+                                                                    <img src="{{ asset('/frontEnd/images/sailorbucket.jpg') }}"
+                                                                        alt="" class="img-fluid">
+                                                                </a>
+                                                            </div>
+                                                            <div class="gridbox-single">
+                                                                <a href="#">
+                                                                    <img src="{{ asset('/frontEnd/images/sailorbucket.jpg') }}"
+                                                                        alt="" class="img-fluid">
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </a>
                                 </li>
                             @endforeach
+
+
 
 
                             <li class="nav-item d-xl-none d-lg-none d-md-block d-sm-block d-xs-block">
@@ -519,122 +572,132 @@
                                 <a class="nav-link" href="/blog">Blog</a>
                             </li>
                         </ul>
+
                         <div class="MobileMenu-main">
                             <div class="accordion accordion-flush" id="accordionFlushExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-heading1174">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapse1174"
-                                            aria-expanded="false" aria-controls="flush-collapse1174">
-                                            <a href="/category/clearance-sale-2025">Clearance Sale 2025</a>
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapse1174" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-heading1174" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="accordion accordion-flush" id="accordionFlushExample1174">
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="flush-headingOne1176">
-                                                        <button class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#flush-collapseOne1176"
-                                                            aria-expanded="false" aria-controls="flush-collapseOne1176">
-                                                            <a href="/category/clearance-sale-2025-womens-collection">Womens
-                                                                Collection</a>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="flush-collapseOne1176" class="accordion-collapse collapse"
-                                                        aria-labelledby="flush-headingOne1176"
-                                                        data-bs-parent="#accordionFlushExample1174">
-                                                        <div class="accordion-body">
-                                                            <div class="accordion-item">
-                                                                <p class="accordion-header">
-                                                                    <a class="child-name"
-                                                                        href="/category/clearance-sale-2025-womens-collection">ALL
-                                                                        Womens Collection</a>
-                                                                </p>
+                                @foreach($menucategories as $scategory)
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="{{$scategory->name}}-{{$scategory->id}}">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#{{$scategory->name}}-{{$scategory->id}}"
+                                                aria-expanded="false"
+                                                aria-controls="{{$scategory->name}}-{{$scategory->id}}">
+                                                <a href="{{url('category/' . $scategory->slug)}}">{{$scategory->name}}</a>
+                                            </button>
+                                        </h2>
+                                        @if($scategory->subcategories->count() > 0)
+                                            <div id="{{$scategory->name}}-{{$scategory->id}}"
+                                                class="accordion-collapse collapse" aria-labelledby="flush-heading1174"
+                                                data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="accordion accordion-flush" id="accordionFlushExample1174">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="flush-headingOne1176">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapseOne1176"
+                                                                    aria-expanded="false" aria-controls="flush-collapseOne1176">
+                                                                    <a href="/category/clearance-sale-2025-womens-collection">Womens
+                                                                        Collection</a>
+                                                                </button>
+                                                            </h2>
+                                                            <div id="flush-collapseOne1176" class="accordion-collapse collapse"
+                                                                aria-labelledby="flush-headingOne1176"
+                                                                data-bs-parent="#accordionFlushExample1174">
+                                                                <div class="accordion-body">
+                                                                    <div class="accordion-item">
+                                                                        <p class="accordion-header">
+                                                                            <a class="child-name"
+                                                                                href="/category/clearance-sale-2025-womens-collection">ALL
+                                                                                Womens Collection</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="flush-headingOne1180">
-                                                        <button class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#flush-collapseOne1180"
-                                                            aria-expanded="false" aria-controls="flush-collapseOne1180">
-                                                            <a href="/category/clearance-sale-2025-newborn-collection">Newborn
-                                                                Collection</a>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="flush-collapseOne1180" class="accordion-collapse collapse"
-                                                        aria-labelledby="flush-headingOne1180"
-                                                        data-bs-parent="#accordionFlushExample1174">
-                                                        <div class="accordion-body">
-                                                            <div class="accordion-item">
-                                                                <p class="accordion-header"><a class="child-name"
-                                                                        href="/category/clearance-sale-2025-newborn-collection">ALL
-                                                                        Newborn Collection</a></p>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="flush-headingOne1180">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapseOne1180"
+                                                                    aria-expanded="false" aria-controls="flush-collapseOne1180">
+                                                                    <a href="/category/clearance-sale-2025-newborn-collection">Newborn
+                                                                        Collection</a>
+                                                                </button>
+                                                            </h2>
+                                                            <div id="flush-collapseOne1180" class="accordion-collapse collapse"
+                                                                aria-labelledby="flush-headingOne1180"
+                                                                data-bs-parent="#accordionFlushExample1174">
+                                                                <div class="accordion-body">
+                                                                    <div class="accordion-item">
+                                                                        <p class="accordion-header"><a class="child-name"
+                                                                                href="/category/clearance-sale-2025-newborn-collection">ALL
+                                                                                Newborn Collection</a></p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="flush-headingOne1175"><button
-                                                            class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#flush-collapseOne1175"
-                                                            aria-expanded="false"
-                                                            aria-controls="flush-collapseOne1175"><a
-                                                                href="/category/clearance-sale-2025-men-collection">Men
-                                                                Collection</a></button></h2>
-                                                    <div id="flush-collapseOne1175" class="accordion-collapse collapse"
-                                                        aria-labelledby="flush-headingOne1175"
-                                                        data-bs-parent="#accordionFlushExample1174">
-                                                        <div class="accordion-body">
-                                                            <div class="accordion-item">
-                                                                <p class="accordion-header"><a class="child-name"
-                                                                        href="/category/clearance-sale-2025-men-collection">ALL
-                                                                        Men Collection</a></p>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="flush-headingOne1175"><button
+                                                                    class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapseOne1175"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="flush-collapseOne1175"><a
+                                                                        href="/category/clearance-sale-2025-men-collection">Men
+                                                                        Collection</a></button></h2>
+                                                            <div id="flush-collapseOne1175" class="accordion-collapse collapse"
+                                                                aria-labelledby="flush-headingOne1175"
+                                                                data-bs-parent="#accordionFlushExample1174">
+                                                                <div class="accordion-body">
+                                                                    <div class="accordion-item">
+                                                                        <p class="accordion-header"><a class="child-name"
+                                                                                href="/category/clearance-sale-2025-men-collection">ALL
+                                                                                Men Collection</a></p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="flush-headingOne1177"><button
-                                                            class="accordion-button collapsed" type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#flush-collapseOne1177"
-                                                            aria-expanded="false"
-                                                            aria-controls="flush-collapseOne1177"><a
-                                                                href="/category/clearance-sale-2025-kids-collection">KIds
-                                                                Collection</a></button></h2>
-                                                    <div id="flush-collapseOne1177" class="accordion-collapse collapse"
-                                                        aria-labelledby="flush-headingOne1177"
-                                                        data-bs-parent="#accordionFlushExample1174">
-                                                        <div class="accordion-body"><a class="child-name"
-                                                                href="/category/clearance-sale-2025-girls-collection">Girls
-                                                                Collection</a><a class="child-name"
-                                                                href="/category/clearance-sale-2025-boys-collection">Boys
-                                                                Collection</a>
-                                                            <div class="accordion-item">
-                                                                <p class="accordion-header"><a class="child-name"
-                                                                        href="/category/clearance-sale-2025-kids-collection">ALL
-                                                                        KIds Collection</a></p>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="flush-headingOne1177"><button
+                                                                    class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#flush-collapseOne1177"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="flush-collapseOne1177"><a
+                                                                        href="/category/clearance-sale-2025-kids-collection">KIds
+                                                                        Collection</a></button></h2>
+                                                            <div id="flush-collapseOne1177" class="accordion-collapse collapse"
+                                                                aria-labelledby="flush-headingOne1177"
+                                                                data-bs-parent="#accordionFlushExample1174">
+                                                                <div class="accordion-body"><a class="child-name"
+                                                                        href="/category/clearance-sale-2025-girls-collection">Girls
+                                                                        Collection</a><a class="child-name"
+                                                                        href="/category/clearance-sale-2025-boys-collection">Boys
+                                                                        Collection</a>
+                                                                    <div class="accordion-item">
+                                                                        <p class="accordion-header"><a class="child-name"
+                                                                                href="/category/clearance-sale-2025-kids-collection">ALL
+                                                                                KIds Collection</a></p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <div class="accordion-item">
+                                                            <p class="accordion-header "><a class="child-name"
+                                                                    href="/category/clearance-sale-2025">ALL Clearance Sale
+                                                                    2025</a></p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                    <p class="accordion-header "><a class="child-name"
-                                                            href="/category/clearance-sale-2025">ALL Clearance Sale
-                                                            2025</a></p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     </div>
-                                </div>
-                                <div class="accordion-item">
+                                @endforeach
+
+                                {{-- #################### --}}
+                                {{-- <div class="accordion-item">
                                     <h2 class="accordion-header" id="flush-heading1181"><button
                                             class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapse1181" aria-expanded="false"
@@ -1726,7 +1789,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
+
+                                {{-- ####################### --}}
                             </div>
                         </div>
                     </div>
@@ -2019,7 +2084,7 @@
 
 
     <script>
-        $(document).on("click", ".cart_remove", function(e){
+        $(document).on("click", ".cart_remove", function (e) {
             e.preventDefault();
 
             let rowId = $(this).data("id");
@@ -2028,11 +2093,11 @@
                 url: "{{ route('cart.remove') }}",
                 type: "GET",
                 data: { rowId: rowId },
-                success: function(response){
+                success: function (response) {
                     $(".cartlist").html(response);
                 }
             });
-            location.reload();-
+            location.reload(); -
         });
     </script>
 
@@ -2042,7 +2107,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    {{-- <script src="/assets/js/script.js" defer=""></script> --}}
+    {{--
+    <script src="/assets/js/script.js" defer=""></script> --}}
 
     <script src="{{asset('/frontEnd/js/script.js')}}"></script>
 
@@ -2052,7 +2118,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-    
+
 
     <script src="{{asset('/frontEnd/js/jquery-3.6.3.min.js')}}"></script>
     <script src="{{asset('/frontEnd/js/bootstrap.min.js')}}"></script>

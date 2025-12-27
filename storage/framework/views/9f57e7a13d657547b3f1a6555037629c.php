@@ -7,6 +7,7 @@
 
 
     <main>
+        <?php if($videos): ?>
         <section class="main-section">
             <div class="main-swiper">
                 <div class="swiper-wrapper">
@@ -15,6 +16,8 @@
 
                         
 
+                        
+                        
                         <a target="_self" href="">
                             
                             <video
@@ -24,10 +27,11 @@
                                 loop
                                 muted
                                 playsinline>
-                                <source src="https://prod.saralifestyle.com/Images/Content/30b406d0fa2d44b3bad763f3f2e22fd8.mp4" type="video/mp4">
+                                <source src="<?php echo e(asset('storage/'.$videos->video)); ?>" type="video/mp4">
+                                
                             </video>
 
-                            <button onclick="openFullscreen()">Fullscreen</button>
+                            
 
                             <script>
                             function openFullscreen() {
@@ -41,29 +45,15 @@
                             </script>
 
                         </a>
+                        
                     </div>
                     
                 </div>
             </div>
         </section>
+        <?php endif; ?>
 
-
-        <section class="ad-banner mb-0">
-            <div class="container-fluid px-0">
-                <div class="row g-0">
-                    <div class="col-md-6 col-12">
-                        <a href="">
-                            <img src="<?php echo e(asset('/frontEnd/images/add.jpg')); ?>" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <a href="">
-                            <img src="<?php echo e(asset('/frontEnd/images/add.jpg')); ?>" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <section class="trending-categories-main">
             <div class="container-fluid">
