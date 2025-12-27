@@ -28006,7 +28006,7 @@ textarea.form-control-lg {
 .MobileMenu-main .accordion .accordion-item h2.accordion-header .accordion-button {
     font-size: 15px;
     padding: 5px 7px;
-    background: #2b2d42
+    background: #2b2d42;
 }
 
 .MobileMenu-main .accordion .accordion-item h2.accordion-header .accordion-button:after {
@@ -28017,11 +28017,11 @@ textarea.form-control-lg {
 
 .MobileMenu-main .accordion .accordion-item h2.accordion-header .accordion-button:focus {
     box-shadow: none;
-    outline: none
+    outline: none;
 }
 
 .MobileMenu-main .accordion .accordion-item h2.accordion-header .accordion-button a {
-    color: #fff
+    color: #fff;
 }
 
 .MobileMenu-main .accordion .accordion-item h2.accordion-header .accordion-button:not(.collapsed):after {

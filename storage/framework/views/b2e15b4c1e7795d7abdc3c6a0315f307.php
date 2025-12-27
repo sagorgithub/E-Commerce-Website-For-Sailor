@@ -528,130 +528,38 @@
                         <div class="MobileMenu-main">
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <?php $__currentLoopData = $menucategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $scategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="<?php echo e($scategory->name); ?>-<?php echo e($scategory->id); ?>">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#<?php echo e($scategory->name); ?>-<?php echo e($scategory->id); ?>"
-                                                aria-expanded="false"
-                                                aria-controls="<?php echo e($scategory->name); ?>-<?php echo e($scategory->id); ?>">
-                                                <a href="<?php echo e(url('category/' . $scategory->slug)); ?>"><?php echo e($scategory->name); ?></a>
-                                            </button>
-                                        </h2>
-                                        <?php if($scategory->subcategories->count() > 0): ?>
-                                            <div id="<?php echo e($scategory->name); ?>-<?php echo e($scategory->id); ?>"
-                                                class="accordion-collapse collapse" aria-labelledby="flush-heading1174"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
-                                                    <div class="accordion accordion-flush" id="accordionFlushExample1174">
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="flush-headingOne1176">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-collapseOne1176"
-                                                                    aria-expanded="false" aria-controls="flush-collapseOne1176">
-                                                                    <a href="/category/clearance-sale-2025-womens-collection">Womens
-                                                                        Collection</a>
-                                                                </button>
-                                                            </h2>
-                                                            <div id="flush-collapseOne1176" class="accordion-collapse collapse"
-                                                                aria-labelledby="flush-headingOne1176"
-                                                                data-bs-parent="#accordionFlushExample1174">
-                                                                <div class="accordion-body">
-                                                                    <div class="accordion-item">
-                                                                        <p class="accordion-header">
-                                                                            <a class="child-name"
-                                                                                href="/category/clearance-sale-2025-womens-collection">ALL
-                                                                                Womens Collection</a>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="flush-headingOne1180">
-                                                                <button class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-collapseOne1180"
-                                                                    aria-expanded="false" aria-controls="flush-collapseOne1180">
-                                                                    <a href="/category/clearance-sale-2025-newborn-collection">Newborn
-                                                                        Collection</a>
-                                                                </button>
-                                                            </h2>
-                                                            <div id="flush-collapseOne1180" class="accordion-collapse collapse"
-                                                                aria-labelledby="flush-headingOne1180"
-                                                                data-bs-parent="#accordionFlushExample1174">
-                                                                <div class="accordion-body">
-                                                                    <div class="accordion-item">
-                                                                        <p class="accordion-header"><a class="child-name"
-                                                                                href="/category/clearance-sale-2025-newborn-collection">ALL
-                                                                                Newborn Collection</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="flush-headingOne1175"><button
-                                                                    class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-collapseOne1175"
-                                                                    aria-expanded="false"
-                                                                    aria-controls="flush-collapseOne1175"><a
-                                                                        href="/category/clearance-sale-2025-men-collection">Men
-                                                                        Collection</a></button></h2>
-                                                            <div id="flush-collapseOne1175" class="accordion-collapse collapse"
-                                                                aria-labelledby="flush-headingOne1175"
-                                                                data-bs-parent="#accordionFlushExample1174">
-                                                                <div class="accordion-body">
-                                                                    <div class="accordion-item">
-                                                                        <p class="accordion-header"><a class="child-name"
-                                                                                href="/category/clearance-sale-2025-men-collection">ALL
-                                                                                Men Collection</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="accordion-item">
-                                                            <h2 class="accordion-header" id="flush-headingOne1177"><button
-                                                                    class="accordion-button collapsed" type="button"
-                                                                    data-bs-toggle="collapse"
-                                                                    data-bs-target="#flush-collapseOne1177"
-                                                                    aria-expanded="false"
-                                                                    aria-controls="flush-collapseOne1177"><a
-                                                                        href="/category/clearance-sale-2025-kids-collection">KIds
-                                                                        Collection</a></button></h2>
-                                                            <div id="flush-collapseOne1177" class="accordion-collapse collapse"
-                                                                aria-labelledby="flush-headingOne1177"
-                                                                data-bs-parent="#accordionFlushExample1174">
-                                                                <div class="accordion-body"><a class="child-name"
-                                                                        href="/category/clearance-sale-2025-girls-collection">Girls
-                                                                        Collection</a><a class="child-name"
-                                                                        href="/category/clearance-sale-2025-boys-collection">Boys
-                                                                        Collection</a>
-                                                                    <div class="accordion-item">
-                                                                        <p class="accordion-header"><a class="child-name"
-                                                                                href="/category/clearance-sale-2025-kids-collection">ALL
-                                                                                KIds Collection</a></p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="accordion-item">
-                                                            <p class="accordion-header "><a class="child-name"
-                                                                    href="/category/clearance-sale-2025">ALL Clearance Sale
-                                                                    2025</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo e($scategory->id); ?>" aria-expanded="false" aria-controls="flush-collapse<?php echo e($scategory->id); ?>">
+                                        <a href="<?php echo e(url('category/' . $scategory->slug)); ?>"><?php echo e($scategory->name); ?></a>
+                                    </button>
+                                    </h2>
+                                    <?php if($scategory->subcategories->count() > 0): ?>
+                                        <div id="flush-collapse<?php echo e($scategory->id); ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <?php $__currentLoopData = $scategory->subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <li class="parent-subcategory">
+                                                            <a href="<?php echo e(url('subcategory/' . $subcategory->slug)); ?>"
+                                                                class="menu-subcategory-name"><?php echo e($subcategory->subcategoryName); ?></a>
+                                                            <?php if($subcategory->childcategories->count() > 0): ?>
+                                                                <span class="menu-subcategory-toggle"><i class="fa fa-chevron-down"></i></span>
+                                                            <?php endif; ?>
+                                                            <ul class="third-nav" style="display: none;">
+                                                                <?php $__currentLoopData = $subcategory->childcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $childcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                    <li class="childcategory">
+                                                                    <a href="<?php echo e(url('products/' . $childcat->slug)); ?>" class="menu-childcategory-name"><?php echo e($childcat->childcategoryName); ?></a>
+                                                                    </li>
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                            </ul>
+                                                        </li>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                </ul>
                                             </div>
-                                        <?php endif; ?>
-                                    </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                
-                                
-
-                                
                             </div>
                         </div>
                     </div>
@@ -863,16 +771,19 @@
                 <div class="modal-body p-0">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div
-                                class="swiper swiper-initialized swiper-horizontal swiper-pointer-events quick-view-slider">
+                            <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events quick-view-slider">
                                 <div class="swiper-wrapper" id="swiper-wrapper-08894cb6ad6873cc" aria-live="off"
-                                    style="transition-duration: 0ms;"></div>
+                                    style="transition-duration: 0ms;">
+                                </div>
                                 <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
-                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false"></div>
+                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false">
+                                </div>
                                 <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
-                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false"></div>
+                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false">
+                                </div>
                                 <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
-                                </div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                                </div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -906,12 +817,19 @@
                                                 </li>
                                                 <li class="nav-item twiter">
                                                     <a class="nav-link" href="#">
-                                                        <i class="fa-brands fa-twitter"></i></a>
+                                                        <i class="fa-brands fa-twitter"></i>
+                                                    </a>
                                                 </li>
-                                                <li class="nav-item printerest"><a class="nav-link" href="#"><i
-                                                            class="fa-brands fa-pinterest-p"></i></a></li>
-                                                <li class="nav-item insta me-0"><a class="nav-link" href="#"><i
-                                                            class="fa-brands fa-instagram"></i></a></li>
+                                                <li class="nav-item printerest">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fa-brands fa-pinterest-p"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item insta me-0">
+                                                    <a class="nav-link" href="#">
+                                                        <i class="fa-brands fa-instagram"></i>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -920,7 +838,9 @@
                                 <div class="size-lists">
                                     <h5>color</h5>
                                     <ul class="nav">
-                                        <li class="nav-item"><a class="nav-link " href="#"></a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#"></a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="size-lists">
@@ -928,10 +848,14 @@
                                     <ul class="nav"></ul>
                                 </div>
                                 <div class="add-bag-flex">
-                                    <div class="add-bag"> <button class="btn add-to-bag-btn">add to bag</button>
+                                    <div class="add-bag"> 
+                                        <button class="btn add-to-bag-btn">add to bag</button>
                                     </div>
-                                    <div class="bg-lightadd-wishlist "><a href="#" class="add-wishlist"><i
-                                                class="bg-light fa-regular fa-heart add-wishlist "></i></a></div>
+                                    <div class="bg-lightadd-wishlist ">
+                                        <a href="#" class="add-wishlist">
+                                            <i class="bg-light fa-regular fa-heart add-wishlist "></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -940,6 +864,8 @@
             </div>
         </div>
     </div>
+
+    
 
 
 
