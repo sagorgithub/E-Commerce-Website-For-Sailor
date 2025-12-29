@@ -344,7 +344,10 @@ class FrontendController extends Controller
             ->select('id', 'name', 'slug')
             ->get();
 
-        return view('frontEnd.layouts.pages.subcategory', compact('subcategory', 'products', 'impproducts', 'childcategories', 'max_price', 'min_price'));
+        $all_sizes = Size::where('status', 1)->get(); //add sagor
+        $all_colors = Color::where('status', 1)->get(); //add sagor
+
+        return view('frontEnd.layouts.pages.subcategory', compact('subcategory', 'products', 'impproducts', 'childcategories', 'max_price', 'min_price', 'all_sizes', 'all_colors'));
     }
 
     public function products($slug, Request $request)
@@ -387,7 +390,35 @@ class FrontendController extends Controller
             ->select('id', 'name', 'slug')
             ->get();
 
-        return view('frontEnd.layouts.pages.childcategory', compact('childcategory', 'products', 'impproducts', 'min_price', 'max_price', 'childcategories'));
+        $all_sizes = Size::where('status', 1)->get(); //add sagor
+        $all_colors = Color::where('status', 1)->get(); //add sagor
+
+
+
+        // ####### Product Fillter ############
+        // $query = Product::query();
+
+        // if($request->has('category')) {
+        //     $categories = explode(',', $request->category);
+        //     $query->whereIn('category', $categories);
+        // }
+
+        // $products = $query->get();
+
+        // $products = Product::whereIn('category_id', $selectedCategories)->get();
+
+        // $selectedCategories = explode(',', request()->query('category', ''));
+
+        // $query = Product::query();
+
+        // if(!empty($selectedCategories)) {
+        //     $query->whereIn('category_id', $selectedCategories); // category_id or correct column
+        // }
+
+        // $products = $query->get();
+
+
+        return view('frontEnd.layouts.pages.childcategory', compact('childcategory', 'products', 'impproducts', 'min_price', 'max_price', 'childcategories', 'all_colors', 'all_sizes', 'products'));
     }
 
 
@@ -412,6 +443,30 @@ class FrontendController extends Controller
 
         return view('frontEnd.layouts.pages.details', compact('details', 'products', 'shippingcharge', 'productcolors', 'productsizes', 'reviews'));
     }
+
+
+
+    // public function quickview(Request $request)
+    // {
+    //     $data['data'] = Product::where([
+    //         'id' => $request->id,
+    //         'status' => 1
+    //     ])
+    //     ->with('images')
+    //     ->withCount('reviews')
+    //     ->first();
+
+    //     return view('frontEnd.layouts.ajax.quickview', $data)->render();
+    // }
+
+
+
+
+
+
+
+
+
     public function quickview(Request $request)
     {
         $data['data'] = Product::where(['id' => $request->id, 'status' => 1])->with('images')->withCount('reviews')->first();

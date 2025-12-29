@@ -190,17 +190,14 @@
                                                                             </a>
                                                                         </li>
                                                                         <li class="nav-item">
-                                                                            <a href="javascript:void(0)" class="nav-link">
-                                                                                <i class="icofont-eye-alt" data-bs-toggle="modal"
-                                                                                    data-bs-target="#productQuickView">
-                                                                                </i>
+                                                                            <a href="javascript:void(0)" class="nav-link quick-view-btn"
+                                                                                data-id="<?php echo e($product->id); ?>"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#productQuickView">
+                                                                                    <i class="icofont-eye-alt"></i>
                                                                             </a>
                                                                         </li>
-                                                                        <li class="nav-item">
-                                                                            <a href="javascript:void(0)" class="nav-link">
-                                                                                <i class="icofont-law-alt-1"></i>
-                                                                            </a>
-                                                                        </li>
+                                                                        
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -268,50 +265,64 @@
                                         style="width: 369.2px; margin-right: 10px;">
                                         <div class="single-product">
                                             <div class="image-box">
-                                                <a href="<?php echo e(route('product', $product->slug)); ?>">
+                                                    <a href="<?php echo e(route('product', $product->slug)); ?>">
 
-                                                    <?php
-                                                        $oldPrice = $product->old_price;
-                                                        $newPrice = $product->new_price;
+                                                            <?php
+                                                                    $oldPrice = $product->old_price;
+                                                                    $newPrice = $product->new_price;
 
-                                                        if ($oldPrice > 0) {
-                                                            $discount = (($oldPrice - $newPrice) / $oldPrice) * 100;
-                                                            $discount = round($discount); // round kore integer %
-                                                        } else {
-                                                            $discount = 0;
-                                                        }
-                                                    ?>
+                                                                    if ($oldPrice > 0) {
+                                                                            $discount = (($oldPrice - $newPrice) / $oldPrice) * 100;
+                                                                            $discount = round($discount); // round kore integer %
+                                                                    } else {
+                                                                            $discount = 0;
+                                                                    }
+                                                                    $images = $product->images; // সব images
+                                                                    // main image (প্রথম)
+                                                                    $firstImage = $images->first()->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Product';
+
+                                                                    // secondary image (random, first বাদ দিয়ে)
+                                                                    if($images->count() > 1) {
+                                                                            $secondImage = $images->skip(1)->random()->image;
+                                                                    } else {
+                                                                            $secondImage = $firstImage; // না থাকলে main image দেখাবে
+                                                                    }
+                                                            ?>
+
+                                                            <img src="<?php echo e(asset($firstImage)); ?>">
+                                                            <img src="<?php echo e(asset($secondImage ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>" alt="" class="img-fluid secondary-image">
 
 
-                                                    <img src="<?php echo e(asset($product->image->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>"
-                                                        alt="" class="img-fluid primary-image">
-                                                    <img src="<?php echo e(asset('/frontEnd/images/a.jpg')); ?>" alt=""
-                                                        class="img-fluid secondary-image">
-                                                    <?php if($discount > 0): ?>
-                                                        <div class="flashsale-tag">
-                                                            <span class="value"><?php echo e($discount); ?></span>
-                                                            <span class="percent"> %</span><span class="off">off</span>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                </a>
-                                                <a class="btn add-towish-btn ">
-                                                    <i class="fa-regular fa-heart"></i>
-                                                </a>
-                                                <div class="product-view-sets">
-                                                    <ul class="nav">
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="#">
-                                                                <i class="icofont-cart-alt"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a href="javascript:void(0)" class="nav-link">
-                                                                <i class="icofont-eye-alt" data-bs-toggle="modal"
-                                                                    data-bs-target="#productQuickView"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                            <?php if($discount > 0): ?>
+                                                                    <div class="flashsale-tag">
+                                                                            <span
+                                                                                    class="value"><?php echo e($discount); ?></span>
+                                                                            <span class="percent"> %</span>
+                                                                            <span class="off">off</span>
+                                                                    </div>
+                                                            <?php endif; ?>
+
+                                                    </a>
+                                                    <a class="btn add-towish-btn ">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                    </a>
+                                                    <div class="product-view-sets">
+                                                            <ul class="nav">
+                                                                    <li class="nav-item">
+                                                                            <a class="nav-link"
+                                                                                    href="<?php echo e(route('product', $product->slug)); ?>">
+                                                                                    <i class="icofont-cart-alt"></i>
+                                                                            </a>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                            <a href="javascript:void(0)"
+                                                                                    class="nav-link">
+                                                                                    <i class="icofont-eye-alt quick-view-btn"
+                                                                                            data-id="<?php echo e($product->id); ?>"></i>
+                                                                            </a>
+                                                                    </li>
+                                                            </ul>
+                                                    </div>
                                             </div>
                                             <div class="product-description">
                                                 <h4 class="product-name">
@@ -611,8 +622,6 @@
             </div>
         </section>
     </main>
-
-
 
 
 <?php $__env->stopSection(); ?>

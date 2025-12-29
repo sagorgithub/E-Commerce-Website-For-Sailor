@@ -90,6 +90,8 @@ class ShoppingController extends Controller
             'cart_count' => Cart::instance('shopping')->count()
         ]);
         // return redirect()->route('customer.checkout');
+        // return redirect()->back(); // আগের page reload হবে
+
     }
 
     public function cart_store_by_now(Request $request)

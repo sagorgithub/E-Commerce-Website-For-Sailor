@@ -173,6 +173,19 @@ Route::group(['namespace' => 'Frontend', 'middleware' => ['ipcheck', 'check_refe
     Route::get('search', [FrontendController::class, 'search'])->name('search');
     Route::get('product/{slug}', [FrontendController::class, 'details'])->name('product');
     Route::get('quick-view', [FrontendController::class, 'quickview'])->name('quickview');
+
+
+
+
+
+    // sagor
+    // Route::get('quick-view/{id}', [FrontendController::class, 'quickview'])->name('quickview');
+    
+
+
+
+
+
     Route::get('/shipping-charge', [FrontendController::class, 'shipping_charge'])->name('shipping.charge');
     Route::get('site/contact-us', [FrontendController::class, 'contact'])->name('contact');
     Route::get('/page/{slug}', [FrontendController::class, 'page'])->name('page');

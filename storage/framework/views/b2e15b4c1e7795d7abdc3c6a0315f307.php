@@ -432,10 +432,9 @@
         <section class="final-nav">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container">
-                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" 
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
                         id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel"
-                        style="max-width: 70%"
-                        >
+                        style="max-width: 70%">
                         <ul class="navbar-nav show-lg">
                             
 
@@ -528,37 +527,42 @@
                         <div class="MobileMenu-main">
                             <div class="accordion accordion-flush" id="accordionFlushExample">
                                 <?php $__currentLoopData = $menucategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $scategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo e($scategory->id); ?>" aria-expanded="false" aria-controls="flush-collapse<?php echo e($scategory->id); ?>">
-                                        <a href="<?php echo e(url('category/' . $scategory->slug)); ?>"><?php echo e($scategory->name); ?></a>
-                                    </button>
-                                    </h2>
-                                    <?php if($scategory->subcategories->count() > 0): ?>
-                                        <div id="flush-collapse<?php echo e($scategory->id); ?>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                            <div class="accordion-body">
-                                                <ul>
-                                                    <?php $__currentLoopData = $scategory->subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <li class="parent-subcategory">
-                                                            <a href="<?php echo e(url('subcategory/' . $subcategory->slug)); ?>"
-                                                                class="menu-subcategory-name"><?php echo e($subcategory->subcategoryName); ?></a>
-                                                            <?php if($subcategory->childcategories->count() > 0): ?>
-                                                                <span class="menu-subcategory-toggle"><i class="fa fa-chevron-down"></i></span>
-                                                            <?php endif; ?>
-                                                            <ul class="third-nav" style="display: none;">
-                                                                <?php $__currentLoopData = $subcategory->childcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $childcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                    <li class="childcategory">
-                                                                    <a href="<?php echo e(url('products/' . $childcat->slug)); ?>" class="menu-childcategory-name"><?php echo e($childcat->childcategoryName); ?></a>
-                                                                    </li>
-                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                            </ul>
-                                                        </li>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </ul>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse<?php echo e($scategory->id); ?>"
+                                                aria-expanded="false" aria-controls="flush-collapse<?php echo e($scategory->id); ?>">
+                                                <a href="<?php echo e(url('category/' . $scategory->slug)); ?>"><?php echo e($scategory->name); ?></a>
+                                            </button>
+                                        </h2>
+                                        <?php if($scategory->subcategories->count() > 0): ?>
+                                            <div id="flush-collapse<?php echo e($scategory->id); ?>" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <?php $__currentLoopData = $scategory->subcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subcategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <li class="parent-subcategory">
+                                                                <a href="<?php echo e(url('subcategory/' . $subcategory->slug)); ?>"
+                                                                    class="menu-subcategory-name"><?php echo e($subcategory->subcategoryName); ?></a>
+                                                                <?php if($subcategory->childcategories->count() > 0): ?>
+                                                                    <span class="menu-subcategory-toggle"><i
+                                                                            class="fa fa-chevron-down"></i></span>
+                                                                <?php endif; ?>
+                                                                <ul class="third-nav" style="display: none;">
+                                                                    <?php $__currentLoopData = $subcategory->childcategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $childcat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                        <li class="childcategory">
+                                                                            <a href="<?php echo e(url('products/' . $childcat->slug)); ?>"
+                                                                                class="menu-childcategory-name"><?php echo e($childcat->childcategoryName); ?></a>
+                                                                        </li>
+                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                                </ul>
+                                                            </li>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+                                        <?php endif; ?>
+                                    </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </div>
                         </div>
@@ -578,6 +582,9 @@
     </div>
 
     <!-- Footer Section -->
+
+
+
 
     <footer class="jsx-dc0f4aac11d231c9 footer-main">
         <div class="jsx-dc0f4aac11d231c9 container-fluid">
@@ -763,110 +770,12 @@
         </div>
     </section>
 
-    <div class="modal fade quick-view" id="productQuickView" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body p-0">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events quick-view-slider">
-                                <div class="swiper-wrapper" id="swiper-wrapper-08894cb6ad6873cc" aria-live="off"
-                                    style="transition-duration: 0ms;">
-                                </div>
-                                <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
-                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false">
-                                </div>
-                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
-                                    aria-controls="swiper-wrapper-08894cb6ad6873cc" aria-disabled="false">
-                                </div>
-                                <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal">
-                                </div>
-                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="product-info-main">
-                                <div class="product-title-flex">
-                                    <div class="title-box">
-                                        <h4> <!-- --> </h4>
-                                        <div class="sku-flex">
-                                            <div class="sku"> </div>
-                                            <div class="rating">
-                                                <ul class="nav">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="#">
-                                                            <i class="fa-solid fa-star"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link disabled">(<!-- -->)</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="icon-box"><a href="#"><i class="fa-solid fa-share-nodes"></i></a>
-                                        <div class="pop-share-main">
-                                            <ul class="nav">
-                                                <li class="nav-item fb">
-                                                    <a class="nav-link" href="#">
-                                                        <i class="fa-brands fa-facebook-f"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item twiter">
-                                                    <a class="nav-link" href="#">
-                                                        <i class="fa-brands fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item printerest">
-                                                    <a class="nav-link" href="#">
-                                                        <i class="fa-brands fa-pinterest-p"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item insta me-0">
-                                                    <a class="nav-link" href="#">
-                                                        <i class="fa-brands fa-instagram"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="price">৳ <!-- -->0</div>
-                                <div class="size-lists">
-                                    <h5>color</h5>
-                                    <ul class="nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link " href="#"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="size-lists">
-                                    <h5>size</h5>
-                                    <ul class="nav"></ul>
-                                </div>
-                                <div class="add-bag-flex">
-                                    <div class="add-bag"> 
-                                        <button class="btn add-to-bag-btn">add to bag</button>
-                                    </div>
-                                    <div class="bg-lightadd-wishlist ">
-                                        <a href="#" class="add-wishlist">
-                                            <i class="bg-light fa-regular fa-heart add-wishlist "></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <div id="custom-modal"></div>
+    <div id="page-overlay"></div>
+    <div id="loading">
+        <div class="custom-loader"></div>
     </div>
-
-    
-
 
 
     <script>
@@ -886,8 +795,6 @@
             location.reload(); -
         });
     </script>
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -926,7 +833,7 @@
     <script src="<?php echo e(asset('/backEnd/assets/js/toastr.min.js')); ?>"></script>
     <?php echo Toastr::message(); ?> <?php echo $__env->yieldPushContent('script'); ?>
     <script>
-        $(".quick_view").on("click", function () {
+        $(".quick-view-btn").on("click", function () {
             var id = $(this).data("id");
             $("#loading").show();
             if (id) {
@@ -970,6 +877,10 @@
             }
         });
         $(".cart_store").on("click", function () {
+             
+        event.preventDefault();
+        event.stopPropagation();
+
             var id = $(this).data("id");
             var qty = $(this).parent().find("input").val();
             if (id) {
@@ -980,15 +891,84 @@
                         qty: qty ? qty : 1
                     },
                     url: "<?php echo e(route('cart.store')); ?>",
-                    success: function (data) {
-                        if (data) {
-                            toastr.success('Success', 'Product add to cart succfully');
-                            return cart_count() + mobile_cart();
-                        }
-                    },
-                });
-            }
+                    // success: function (data) {
+                    //     if (data) {
+                    //         toastr.success('Success', 'Product add to cart succfully');
+                    //         return cart_count() + mobile_cart();
+                    //     }
+                    // },
+                    
+                })
+        .done(function (res) {
+            if (res.success) {
+                toastr.success(res.message);
+                
+                location.reload();
+                // return cart_count() + mobile_cart();
+            }})}
         });
+
+
+
+
+
+//sagor vai
+
+    function add_to_cart_details(button, event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        // Size validation
+        if (!$('input[name="product_size"]:checked').val()) {
+            toastr.error('অনুগ্রহ করে সাইজ নির্বাচন করুন');
+            return false;
+        }
+
+        let $btn = $(button);
+        let $form = $btn.closest('form');
+
+        // Button loading
+        $btn.val('Please wait...');
+        $btn.prop('disabled', true);
+
+        $.ajax({
+            url: '<?php echo e(route('customer.cart')); ?>',
+            type: 'POST',
+            data: $form.serialize(),
+            dataType: 'json'
+        })
+        .done(function (res) {
+            if (res.success) {
+                toastr.success(res.message);
+
+                // ✅ Cart count update safely
+                if ($('#cart_count').length) {
+                    $('#cart_count').text(res.cart_count);
+                }
+            } else {
+                toastr.error(res.message || 'Add to cart failed');
+            }
+        })
+        .fail(function () {
+            toastr.error('সার্ভার সমস্যা হয়েছে');
+        })
+        .always(function () {
+            // 🔥 ALWAYS reset button
+            $btn.val('add to bag');
+            $btn.prop('disabled', false);
+        });
+
+        
+                    location.reload();
+    }
+    
+
+//sagor vai
+
+
+
+
+
 
         $(".cart_remove").on("click", function () {
             var id = $(this).data("id");

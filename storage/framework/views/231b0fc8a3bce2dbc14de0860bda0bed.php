@@ -66,22 +66,25 @@
                                                         <div class="col-auto"><label for="inputPassword6"
                                                                         class="col-form-label">sort by</label>
                                                         </div>
-                                                        <div class="col-auto">
-                                                                <select class="form-select form-control"
-                                                                        aria-label="Default select example" name="order_by">
-                                                                        <option value="">Open this select menu</option>
-                                                                        <option value="low2high">Price Low to High</option>
-                                                                        <option value="high2low">Price High to Low</option>
-                                                                        <option value="atoz">Name A to Z</option>
-                                                                        <option value="ztoa">Name Z to A</option>
-                                                                </select>
+                                                        <div class="page-sort col-auto">
+                                                                <form action="" class="sort-form">
+                                                                        <select name="sort" class="form-control form-select sort">
+                                                                        <option value="1" <?php if(request()->get('sort')==1): ?>selected <?php endif; ?>>Product: Latest</option>
+                                                                        <option value="2" <?php if(request()->get('sort')==2): ?>selected <?php endif; ?>>Product: Oldest</option>
+                                                                        <option value="3" <?php if(request()->get('sort')==3): ?>selected <?php endif; ?>>Price: High To Low</option>
+                                                                        <option value="4" <?php if(request()->get('sort')==4): ?>selected <?php endif; ?>>Price: Low To High</option>
+                                                                        <option value="5" <?php if(request()->get('sort')==5): ?>selected <?php endif; ?>>Name: A-Z</option>
+                                                                        <option value="6" <?php if(request()->get('sort')==6): ?>selected <?php endif; ?>>Name: Z-A</option>
+                                                                        </select>
+                                                                        <input type="hidden" name="min_price" value="<?php echo e(request()->get('min_price')); ?>" />
+                                                                        <input type="hidden" name="max_price" value="<?php echo e(request()->get('max_price')); ?>" />
+                                                                </form>
                                                         </div>
                                                 </div>
                                         </div>
                                 </div>
                                 <div class="row">
-                                        <div
-                                                class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-2 shop-sidebar-parent display-none">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-2 shop-sidebar-parent display-none">
                                                 <div class="sidebar-main">
 
                                                         <div class="sidebar-accordion-main">
@@ -186,12 +189,20 @@
                                                                                                 } else {
                                                                                                         $discount = 0;
                                                                                                 }
+                                                                                                $images = $product->images; // সব images
+                                                                                                // main image (প্রথম)
+                                                                                                $firstImage = $images->first()->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Product';
+
+                                                                                                // secondary image (random, first বাদ দিয়ে)
+                                                                                                if($images->count() > 1) {
+                                                                                                        $secondImage = $images->skip(1)->random()->image;
+                                                                                                } else {
+                                                                                                        $secondImage = $firstImage; // না থাকলে main image দেখাবে
+                                                                                                }
                                                                                         ?>
 
-                                                                                        <img
-                                                                                                src="<?php echo e(asset($product->image->image ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>">
-                                                                                        <img src="assets/images/back1.jpg" alt=""
-                                                                                                class="img-fluid secondary-image">
+                                                                                        <img src="<?php echo e(asset($firstImage)); ?>">
+                                                                                        <img src="<?php echo e(asset($secondImage ?? 'https://placehold.co/400x400/f8bbd0/ffffff?text=Prduct')); ?>" alt="" class="img-fluid secondary-image">
 
 
                                                                                         <?php if($discount > 0): ?>
@@ -211,17 +222,15 @@
                                                                                         <ul class="nav">
                                                                                                 <li class="nav-item">
                                                                                                         <a class="nav-link"
-                                                                                                                href="/details/mens-classic-kurta-23771">
-                                                                                                                <i
-                                                                                                                        class="icofont-cart-alt"></i>
+                                                                                                                href="<?php echo e(route('product', $product->slug)); ?>">
+                                                                                                                <i class="icofont-cart-alt"></i>
                                                                                                         </a>
                                                                                                 </li>
                                                                                                 <li class="nav-item">
                                                                                                         <a href="javascript:void(0)"
                                                                                                                 class="nav-link">
-                                                                                                                <i class="icofont-eye-alt"
-                                                                                                                        data-bs-toggle="modal"
-                                                                                                                        data-bs-target="#productQuickView"></i>
+                                                                                                                <i class="icofont-eye-alt quick-view-btn"
+                                                                                                                        data-id="<?php echo e($product->id); ?>"></i>
                                                                                                         </a>
                                                                                                 </li>
                                                                                         </ul>
@@ -253,50 +262,7 @@
 
                                                 </div>
                                         </div>
-                                        <nav aria-label="Page navigation comments" class="page-pagination">
-                                                <ul class="pagination justify-content-center" role="navigation"
-                                                        aria-label="Pagination">
-                                                        <li class="page-item disabled">
-                                                                <a class="page-link " tabindex="-1" role="button"
-                                                                        aria-disabled="true" aria-label="Previous page"
-                                                                        rel="prev">«</a>
-                                                        </li>
-                                                        <li class="page-item active">
-                                                                <a rel="canonical" role="button" class="page-link" tabindex="-1"
-                                                                        aria-label="Page 1 is your current page"
-                                                                        aria-current="page">1</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a rel="next" role="button" class="page-link" tabindex="0"
-                                                                        aria-label="Page 2">2</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a role="button" class="page-link" tabindex="0"
-                                                                        aria-label="Page 3">3</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a class="page-link" role="button" tabindex="0"
-                                                                        aria-label="Jump forward">...</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a role="button" class="page-link" tabindex="0"
-                                                                        aria-label="Page 68">68</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a role="button" class="page-link" tabindex="0"
-                                                                        aria-label="Page 69">69</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a role="button" class="page-link" tabindex="0"
-                                                                        aria-label="Page 70">70</a>
-                                                        </li>
-                                                        <li class="page-item">
-                                                                <a class="page-link" tabindex="0" role="button"
-                                                                        aria-disabled="false" aria-label="Next page"
-                                                                        rel="next">»</a>
-                                                        </li>
-                                                </ul>
-                                        </nav>
+                                        
                                 </div>
                         </div>
                 </section>

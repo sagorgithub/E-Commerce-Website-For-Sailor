@@ -307,4 +307,10 @@ class ProductController extends Controller
         $products = Product::whereIn('id', $request->input('product_ids'))->update(['status' => $request->status]);
         return response()->json(['status' => 'success', 'message' => 'Product status change successfully']);
     }
+
+
+
+
+    // ############################ Sagor Add#########################
+    
 }

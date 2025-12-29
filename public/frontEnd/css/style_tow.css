@@ -161,7 +161,17 @@
 .sidebar-main, .accordion-body, .card-body{
     visibility: visible;
 }
-
+.d-flex {
+    display: flex !important;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.modal-body {
+    margin-top: 0PX !important;
+}
 
 
 
